@@ -1,0 +1,189 @@
+/*
+ * Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+ * Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+ *
+ * Project:    Nord
+ * Version:    0.2.0
+ * Repository: https://github.com/arcticicestudio/nord
+ * License:    MIT
+ * References:
+ *   https://www.w3.org/TR/css-variables
+ *   https://www.w3.org/TR/selectors/#root-pseudo
+ *   https://drafts.csswg.org/css-variables
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+ *   http://warpspire.com/kss
+ *   https://github.com/kss-node/kss-node
+ */
+
+/*
+An arctic, north-bluish color palette.
+Created for the clean- and minimal flat design pattern to achieve a optimal focus and readability for code syntax
+highlighting and UI.
+It consists of a total of sixteen, carefully selected, dimmed pastel colors for a eye-comfortable, but yet colorful
+ambiance.
+
+Styleguide Nord
+*/
+
+* {
+    all: unset;
+}
+
+.normal-icons {
+    -gtk-icon-size: 16px;
+}
+
+.large-icons {
+    -gtk-icon-size: 32px;
+}
+
+scrollbar {
+    opacity: 0;
+}
+
+.box-wrapper {
+    box-shadow:
+        0 19px 38px rgba(0, 0, 0, 0.3),
+        0 15px 12px rgba(0, 0, 0, 0.22);
+    background: rgba(236, 239, 244, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #d8dee9;
+}
+
+.preview-box,
+.elephant-hint,
+.placeholder {
+    color: #2e3440;
+}
+
+.box {}
+
+.search-container {
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 1px #2e3440;
+}
+
+.input placeholder {
+    opacity: 0.5;
+}
+
+.input {
+    caret-color: #2e3440;
+    background: rgba(216, 222, 233, 0.4);
+    padding: 10px;
+    color: #2e3440;
+}
+
+.input:focus,
+.input:active {}
+
+.content-container {}
+
+.placeholder {}
+
+.scroll {}
+
+.list {
+    color: #2e3440;
+}
+
+child {}
+
+.item-box {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.item-quick-activation {
+    background: rgba(84, 84, 109, 0.25);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+child:hover .item-box,
+child:selected .item-box {
+    background: rgba(84, 84, 109, 0.25);
+}
+
+.item-text-box {}
+
+.item-subtext {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.providerlist .item-subtext {
+    font-size: inherit;
+    opacity: 0.75;
+}
+
+.item-image-text {
+    font-size: 28px;
+}
+
+.preview {
+    border: 1px solid rgba(84, 84, 109, 0.25);
+    padding: 10px;
+    border-radius: 10px;
+    color: #2e3440;
+}
+
+.calc .item-text {
+    font-size: 24px;
+}
+
+.calc .item-subtext {}
+
+.symbols .item-image {
+    font-size: 24px;
+}
+
+.todo.done .item-text-box {
+    opacity: 0.25;
+}
+
+.todo.urgent {
+    font-size: 24px;
+}
+
+.todo.active {
+    font-weight: bold;
+}
+
+.bluetooth.disconnected {
+    opacity: 0.5;
+}
+
+.preview .large-icons {
+    -gtk-icon-size: 64px;
+}
+
+.keybinds-wrapper {
+    border-top: 1px solid #d8dee9;
+    font-size: 12px;
+    opacity: 0.5;
+    color: #2e3440;
+}
+
+.keybinds {}
+
+.keybind {}
+
+.keybind-bind {
+    /* color: lighter(@window_bg_color); */
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.keybind-label {}
+
+.error {
+    padding: 10px;
+    background: #bf616a;
+    color: #2e3440;
+}
+
+:not(.calc).current {
+    font-style: italic;
+}

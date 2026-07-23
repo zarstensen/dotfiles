@@ -1,0 +1,172 @@
+@import "../../../../.config/assets/styles/nord.css";
+
+:root {
+    --window-bg-color: color-mix(in srgb, var(--nord6), transparent 40%);
+    --accent-bg-color: var(--nord4);
+    --theme-fg-color: var(--nord0);
+    --error-bg-color: var(--nord11);
+    --error-fg-color: var(--nord0);
+}
+
+* {
+    all: unset;
+}
+
+.normal-icons {
+    -gtk-icon-size: 16px;
+}
+
+.large-icons {
+    -gtk-icon-size: 32px;
+}
+
+scrollbar {
+    opacity: 0;
+}
+
+.box-wrapper {
+    box-shadow:
+        0 19px 38px rgba(0, 0, 0, 0.3),
+        0 15px 12px rgba(0, 0, 0, 0.22);
+    background: var(--window-bg-color);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--accent-bg-color);
+}
+
+.preview-box,
+.elephant-hint,
+.placeholder {
+    color: var(--theme-fg-color);
+}
+
+.box {}
+
+.search-container {
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 1px var(--theme-fg-color);
+}
+
+.input placeholder {
+    opacity: 0.5;
+}
+
+.input {
+    caret-color: var(--theme-fg-color);
+    background: color-mix(in srgb, var(--accent-bg-color), transparent 60%);
+    padding: 10px;
+    color: var(--theme-fg-color);
+}
+
+.input:focus,
+.input:active {}
+
+.content-container {}
+
+.placeholder {}
+
+.scroll {}
+
+.list {
+    color: var(--theme-fg-color);
+}
+
+child {}
+
+.item-box {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.item-quick-activation {
+    background: rgba(84, 84, 109, 0.25);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+child:hover .item-box,
+child:selected .item-box {
+    background: rgba(84, 84, 109, 0.25);
+}
+
+.item-text-box {}
+
+.item-subtext {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.providerlist .item-subtext {
+    font-size: unset;
+    opacity: 0.75;
+}
+
+.item-image-text {
+    font-size: 28px;
+}
+
+.preview {
+    border: 1px solid rgba(84, 84, 109, 0.25);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--theme-fg-color);
+}
+
+.calc .item-text {
+    font-size: 24px;
+}
+
+.calc .item-subtext {}
+
+.symbols .item-image {
+    font-size: 24px;
+}
+
+.todo.done .item-text-box {
+    opacity: 0.25;
+}
+
+.todo.urgent {
+    font-size: 24px;
+}
+
+.todo.active {
+    font-weight: bold;
+}
+
+.bluetooth.disconnected {
+    opacity: 0.5;
+}
+
+.preview .large-icons {
+    -gtk-icon-size: 64px;
+}
+
+.keybinds-wrapper {
+    border-top: 1px solid var(--accent-bg-color);
+    font-size: 12px;
+    opacity: 0.5;
+    color: var(--theme-fg-color);
+}
+
+.keybinds {}
+
+.keybind {}
+
+.keybind-bind {
+    /* color: lighter(@window_bg_color); */
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.keybind-label {}
+
+.error {
+    padding: 10px;
+    background: var(--error-bg-color);
+    color: var(--error-fg-color);
+}
+
+:not(.calc).current {
+    font-style: italic;
+}

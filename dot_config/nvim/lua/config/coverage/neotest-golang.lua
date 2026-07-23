@@ -1,0 +1,1 @@
+return { "-coverprofile=coverage.out" }

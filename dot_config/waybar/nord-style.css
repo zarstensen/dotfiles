@@ -1,0 +1,259 @@
+@import "../assets/styles/nord.css";
+
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMonoNerdFontPropo, JetBrainsMonoNerdFont;
+    /* FontAwesome, Roboto, Helvetica, Arial, sans-serif */
+    font-size: 1em;
+}
+
+/* Tooltips */
+/* TODO: blur tooltip backgrounds */
+
+tooltip {
+    background-color: color-mix(in srgb, var(--nord6), transparent 20%);
+}
+
+tooltip label {
+    color: var(--nord0);
+    font-size: 1em;
+}
+
+/* Power Group */
+
+#group-power,
+#group-battery,
+#group-tray {
+    margin: 5.5px 0px 5.5px 0px;
+    /* padding: 0px 5px; */
+    border-radius: 15px;
+    transition-property: background-color, color, margin, padding;
+    transition-duration: .4s;
+}
+
+#group-power {
+    margin-right: 4px;
+    padding-left: 12px;
+}
+
+#group-power:hover,
+#group-battery:hover,
+#group-tray:hover {
+    background-color: var(--nord0);
+    color: var(--nord11);
+}
+
+.child-group label {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition-property: margin;
+    transition-duration: .4s;
+}
+
+#power-profiles-daemon {
+    padding: 0;
+    padding-left: 10px;
+    margin: 0px 5px;
+}
+
+#power-profiles-daemon.performance {
+    color: var(--nord12);
+}
+
+#power-profiles-daemon.balanced {
+    color: var(--nord8);
+}
+
+#power-profiles-daemon.power-saver {
+    color: var(--nord14);
+}
+
+#custom-poweroff:hover,
+#custom-reboot:hover,
+#custom-lock:hover,
+#custom-sleep:hover,
+#custom-logoff:hover,
+#power-profiles-daemon:hover {
+    color: var(--nord4);
+    transition-property: color;
+    transition-duration: .25s;
+}
+
+#custom-poweroff {
+    padding-right: 10px;
+}
+
+#custom-reboot {
+    color: var(--nord12);
+}
+
+#custom-lock {
+    color: var(--nord15);
+}
+
+#custom-sleep {
+    color: var(--nord13);
+}
+
+#custom-logoff {
+    color: var(--nord10);
+}
+
+#group-battery:hover #battery {
+    color: var(--nord4);
+}
+
+#group-tray:hover #custom-tray-button {
+    color: var(--nord4);
+}
+
+/* Waybar Workspaces */
+
+window#waybar {
+    background-color: color-mix(in srgb, var(--nord6), transparent 90%);
+    border-top: 6px ridge;
+    border-color: color-mix(in srgb, var(--nord4), transparent 80%);
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    background: transparent;
+    transition-property: background-color, color, text-shadow;
+    transition-duration: .5s;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inherit;
+}
+
+#workspaces button {
+    padding: 0 0.45em;
+    border: none;
+    /* keep existing rules + add transitions so state changes animate */
+    transition: color 180ms ease, text-shadow 220ms ease, transform 200ms cubic-bezier(.2, .8, .2, 1), background-color 180ms ease;
+}
+
+/* active workspace - use a small scale + glowing text-shadow */
+#workspaces button.active {
+    color: var(--nord6);
+    text-shadow: 2px 2px 0 var(--nord9), 0 0 6px var(--nord4);
+}
+
+#workspaces button.urgent {
+    background-color: var(--nord12);
+}
+
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    background-color: transparent;
+    color: var(--nord0);
+    transition-property: color;
+    transition-duration: .5s;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* #battery.charging, #battery.plugged {
+    color: var(--nord14);
+} */
+
+@keyframes background-blink {
+    to {
+        background-color: transparent;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: var(--nord12);
+    animation-name: background-blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* TODO what is this? */
+label:focus {
+    background-color: #000000;
+}
+
+#network.disconnected {
+    background-color: var(--nord13);
+}
+
+/* TODO add audio module, for volume / muting */
+
+#pulseaudio-slider {
+    min-height: 0px;
+    min-width: 150px;
+}
+
+
+#pulseaudio-slider slider {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* TODO: what is this? */
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+
+#tray {
+    background-color: transparent;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: var(--nord12);
+}

@@ -1,0 +1,290 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "reload_style_on_change": true,
+    "height": 50,
+    "modules-left": [
+        "group/group-power",
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "group/group-tray",
+        "pulseaudio/slider",
+        "pulseaudio",
+        "network",
+        "clock",
+        "group/group-battery"
+    ],
+    "pulseaudio": {
+        "format": "{icon}",
+        "states": {
+            "muted": 0
+        },
+        "rotate": 180,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format-muted": "",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "pulseaudio/slider": {},
+    "wireplumber": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "\udb80\udc7f",
+            "idle": "\udb80\udc7e",
+            "suspended": "\udb80\udc7d",
+            "disconnected": "\udb80\udde8"
+        },
+        "tooltip": false,
+        "on-click": "pavucontrol"
+    },
+    "clock": {
+        "interval": 1,
+        "tooltip": true,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{0:>10%H:%M:%S}\n{0:>10%d/%m/%Y}",
+        "calendar": {
+            "mode": "month",
+            "week-pos": "right",
+            "mode-mon-col": 3
+        },
+        "tooltip-format": "{calendar}"
+    },
+    "hyprland/workspaces": {
+        "format": "<span font='20'>{icon}</span>",
+        "format-icons": {
+            "default": "⬣"
+        },
+        "persistent-workspaces": {
+            "*": [
+                "2",
+                "5",
+                "8",
+                "11",
+                "14"
+            ]
+        }
+    },
+    "network": {
+        // fix some icon misalignment with rise attribute.
+        "format": "<span rise=\"5.5pt\">{icon}</span>",
+        "tooltip-format": "{ifname} via {gwaddr} {icon}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) {icon}",
+        "tooltip-format-ethernet": "{ifname} {icon}",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-icons": {
+            "wifi": [
+                "\udb82\udd2f",
+                "\udb82\udd1f",
+                "\udb82\udd22",
+                "\udb82\udd28"
+            ],
+            "ethernet": "\udb80\ude00",
+            "disabled": "\udb80\udc1d",
+            "disconnected": "\udb80\udde8"
+        },
+        "on-click": "nm-connection-editor",
+        "tooltip": true,
+        "max-length": 50
+    },
+    // Power Group
+    "group/group-power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "child-group",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/poweroff",
+            "custom/reboot",
+            "custom/lock",
+            "custom/sleep",
+            "custom/logoff"
+        ],
+        "tooltip": false
+    },
+    "custom/logoff": {
+        "format": "<span font='13'>\uedf5</span>",
+        "tooltip": false,
+        "on-click": "hyprshutdown"
+    },
+    "custom/lock": {
+        "format": "<span font='13'>󰦝</span>",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/sleep": {
+        "format": "<span font='13'>󱠨</span>",
+        "tooltip": false,
+        "on-click": "systemctl suspend && hyprlock"
+    },
+    "custom/reboot": {
+        "format": "<span font='13'>\uf021</span>",
+        "tooltip": false,
+        "on-click": "hyprshutdown --post-cmd \"shutdown -r now\""
+    },
+    "custom/poweroff": {
+        "format": "<span font='16'>\u23fb</span>",
+        "tooltip": false,
+        "on-click": "hyprshutdown --post-cmd \"shutdown now\""
+    },
+    // Battery group
+    "group/group-battery": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "child-group",
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
+        "modules": [
+            "battery",
+            "power-profiles-daemon"
+        ],
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "interval": 1,
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon} \udb85\udc0b",
+        "format-plugged": "{capacity}% {icon} \udb85\udc0b",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "Performance ",
+            "balanced": "Balanced ",
+            "power-saver": "Power Saver "
+        }
+    },
+    "group/group-tray": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "child-group",
+            "transition-left-to-right": false,
+            "click-to-reveal": false
+        },
+        "modules": [
+            "custom/tray-button",
+            "tray"
+        ],
+        "tooltip": false
+    },
+    "custom/tray-button": {
+        "format": "\uf47d",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 16,
+    },
+    // hyprkool group
+    "group/hyprkool-workspaces": {
+        "orientation": "inherit",
+        "modules": [
+            "custom/hyprkool-1",
+            "custom/hyprkool-2",
+            "custom/hyprkool-3",
+            "custom/hyprkool-4",
+            "custom/hyprkool-5",
+            "custom/hyprkool-6",
+            "custom/hyprkool-7",
+            "custom/hyprkool-8",
+            "custom/hyprkool-9",
+            "custom/hyprkool-10"
+        ],
+        "tooltip": false
+    },
+    "custom/hyprkool-1": {
+        "exec": "cat /var/tmp/hyprkool-waybar-1",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-2": {
+        "exec": "cat /var/tmp/hyprkool-waybar-2",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-3": {
+        "exec": "cat /var/tmp/hyprkool-waybar-3",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-4": {
+        "exec": "cat /var/tmp/hyprkool-waybar-4",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-5": {
+        "exec": "cat /var/tmp/hyprkool-waybar-5",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-6": {
+        "exec": "cat /var/tmp/hyprkool-waybar-6",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-7": {
+        "exec": "cat /var/tmp/hyprkool-waybar-7",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-8": {
+        "exec": "cat /var/tmp/hyprkool-waybar-8",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-9": {
+        "exec": "cat /var/tmp/hyprkool-waybar-9",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+    "custom/hyprkool-10": {
+        "exec": "cat /var/tmp/hyprkool-waybar-10",
+        "hide-empty-text": true,
+        "return-type": "json",
+        "restart-interval": 5,
+        "format": "<span font='20'>{text}</span>"
+    },
+}

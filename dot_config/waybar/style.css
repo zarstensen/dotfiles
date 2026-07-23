@@ -1,0 +1,286 @@
+/*
+ * Copyright (c) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
+ * Copyright (c) 2016-present Sven Greb <development@svengreb.de>
+ *
+ * Project:    Nord
+ * Version:    0.2.0
+ * Repository: https://github.com/arcticicestudio/nord
+ * License:    MIT
+ * References:
+ *   https://www.w3.org/TR/css-variables
+ *   https://www.w3.org/TR/selectors/#root-pseudo
+ *   https://drafts.csswg.org/css-variables
+ *   https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
+ *   http://warpspire.com/kss
+ *   https://github.com/kss-node/kss-node
+ */
+
+/*
+An arctic, north-bluish color palette.
+Created for the clean- and minimal flat design pattern to achieve a optimal focus and readability for code syntax
+highlighting and UI.
+It consists of a total of sixteen, carefully selected, dimmed pastel colors for a eye-comfortable, but yet colorful
+ambiance.
+
+Styleguide Nord
+*/
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMonoNerdFontPropo, JetBrainsMonoNerdFont;
+    /* FontAwesome, Roboto, Helvetica, Arial, sans-serif */
+    font-size: 1em;
+}
+
+/* Tooltips */
+
+/* TODO: blur tooltip backgrounds */
+
+tooltip {
+    background-color: rgba(236, 239, 244, 0.8);
+}
+
+tooltip label {
+    color: #2e3440;
+    font-size: 1em;
+}
+
+/* Power Group */
+
+#group-power,
+#group-battery,
+#group-tray {
+    margin: 5.5px 0px 5.5px 0px;
+    /* padding: 0px 5px; */
+    border-radius: 15px;
+    transition-property: background-color, color, margin, padding;
+    transition-duration: .4s;
+}
+
+#group-power {
+    margin-right: 4px;
+    padding-left: 12px;
+}
+
+#group-power:hover,
+#group-battery:hover,
+#group-tray:hover {
+    background-color: #2e3440;
+    color: #bf616a;
+}
+
+.child-group label {
+    margin-left: 10px;
+    margin-right: 10px;
+    transition-property: margin;
+    transition-duration: .4s;
+}
+
+#power-profiles-daemon {
+    padding: 0;
+    padding-left: 10px;
+    margin: 0px 5px;
+}
+
+#power-profiles-daemon.performance {
+    color: #d08770;
+}
+
+#power-profiles-daemon.balanced {
+    color: #88c0d0;
+}
+
+#power-profiles-daemon.power-saver {
+    color: #a3be8c;
+}
+
+#custom-poweroff:hover,
+#custom-reboot:hover,
+#custom-lock:hover,
+#custom-sleep:hover,
+#custom-logoff:hover,
+#power-profiles-daemon:hover {
+    color: #d8dee9;
+    transition-property: color;
+    transition-duration: .25s;
+}
+
+#custom-poweroff {
+    padding-right: 10px;
+}
+
+#custom-reboot {
+    color: #d08770;
+}
+
+#custom-lock {
+    color: #b48ead;
+}
+
+#custom-sleep {
+    color: #ebcb8b;
+}
+
+#custom-logoff {
+    color: #5e81ac;
+}
+
+#group-battery:hover #battery {
+    color: #d8dee9;
+}
+
+#group-tray:hover #custom-tray-button {
+    color: #d8dee9;
+}
+
+/* Waybar Workspaces */
+
+window#waybar {
+    background-color: rgba(236, 239, 244, 0.1);
+    border-top: 6px ridge;
+    border-color: rgba(216, 222, 233, 0.2);
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    background: transparent;
+    transition-property: background-color, color, text-shadow;
+    transition-duration: .5s;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inherit;
+}
+
+#workspaces button {
+    padding: 0 0.45em;
+    border: none;
+    /* keep existing rules + add transitions so state changes animate */
+    transition: color 180ms ease, text-shadow 220ms ease, transform 200ms cubic-bezier(.2, .8, .2, 1), background-color 180ms ease;
+}
+
+/* active workspace - use a small scale + glowing text-shadow */
+
+#workspaces button.active {
+    color: #eceff4;
+    text-shadow: 2px 2px 0 #81a1c1, 0 0 6px #d8dee9;
+}
+
+#workspaces button.urgent {
+    background-color: #d08770;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #2e3440;
+    transition-property: color;
+    transition-duration: .5s;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* #battery.charging, #battery.plugged {
+    color: var(--nord14);
+} */
+
+@keyframes background-blink {
+    to {
+        background-color: transparent;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+
+#battery.critical:not(.charging) {
+    background-color: #d08770;
+    animation-name: background-blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* TODO what is this? */
+
+label:focus {
+    background-color: #000000;
+}
+
+#network.disconnected {
+    background-color: #ebcb8b;
+}
+
+/* TODO add audio module, for volume / muting */
+
+#pulseaudio-slider {
+    min-height: 0px;
+    min-width: 150px;
+}
+
+#pulseaudio-slider slider {
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* TODO: what is this? */
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#tray {
+    background-color: transparent;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #d08770;
+}
