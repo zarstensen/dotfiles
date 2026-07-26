@@ -1,0 +1,7 @@
+[data]
+hosttype = "{{ 
+    promptChoiceOnce 
+    . "hosttype"
+    "What type of host is this" 
+    (list "desktop" "laptop") 
+    }}"

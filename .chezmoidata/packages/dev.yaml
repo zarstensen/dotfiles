@@ -1,0 +1,35 @@
+pkgs_dev:
+    # general tools and ide's
+  - git
+  - lazygit
+  - serie
+  - visual-studio-code-bin
+  - jetbrains-toolbox
+  - pycharm-community-edition
+  - drawio-desktop
+    # c++
+  - cmake
+  - meson
+    # dotnet
+  - dotnet-runtime
+  - dotnet-runtime-8.0
+  - dotnet-sdk
+    # godo
+  - godot
+    # python
+  - python-debugpy
+  - python-lark-parser
+  - python-pip
+  - python-pipx
+  - python-pynvim
+  - python-scipy
+  - python-sympy
+  - python312
+    # rust
+  - rust-analyzer
+  - rustup
+    # go
+  - go-tools
+  - gotestsum
+    # lua
+  - luarocks
