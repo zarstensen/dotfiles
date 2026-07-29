@@ -1,0 +1,19 @@
+[user]
+	name = Simon Sørensen
+	email = 61250140+zarstensen@users.noreply.github.com
+[credential]
+	helper = libsecret
+	helper = 
+	helper = /home/zarsten/.dotnet/tools/git-credential-manager
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[core]
+	editor = code -w
+[pull]
+	rebase = false
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
