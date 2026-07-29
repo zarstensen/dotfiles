@@ -12,7 +12,7 @@ sudo pacman -S --needed --noconfirm python
 
 installed_pkgs=$(pacman -Qq)
 
-required_pkgs=$(python3 list-hosttype-pkgs.py "{{ .hosttype }}")
+required_pkgs=$(python3 "$CHEZMOI_SOURCE_DIR/list-hosttype-pkgs.py" "{{ .hosttype }}")
 
 remove_pkgs=$(comm -23 <(cat "$STATE_FILE" | sort -u) <(echo "$required_pkgs" | sort -u) )
 
