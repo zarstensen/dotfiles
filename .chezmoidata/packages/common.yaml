@@ -7,6 +7,7 @@ pkgs_common:
   - opencode
   - obsidian
   - dolphin
+  - localsend
     # admin popup for dolphin
   - kio-admin
     # extract context menu
@@ -30,6 +31,8 @@ pkgs_common:
   - imagemagick
   - fastfetch
   - debtap
+  # tui file explorer
+  - yazi
 
   - wev
   - stow

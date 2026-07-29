@@ -112,8 +112,8 @@ vim.o.cmdheight = 0
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- enable local config
-vim.o.exrc = true
+-- disable local config, other plugin handles this instead
+vim.o.exrc = false
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
