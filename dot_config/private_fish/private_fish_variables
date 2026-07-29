@@ -2,4 +2,4 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:\x1d
-SETUVAR fish_user_paths:/home/zarsten/\x2edotnet/tools\x1e/home/zarsten/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/zarsten/\x2elocal/bin\x1e/home/zarsten/\x2edotnet/tools\x1e/home/zarsten/\x2ecargo/bin

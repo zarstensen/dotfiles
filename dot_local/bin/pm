@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo -E HOME="$HOME" nvim ~/.local/share/chezmoi/.chezmoidata/packages${1:+"/$1"}
