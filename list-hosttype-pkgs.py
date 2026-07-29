@@ -9,7 +9,6 @@ HOSTTYPE_CATEGORIES = {
         "pkgs_fonts",
         "pkgs_music",
         "pkgs_dev",
-        "pkgs_nvim",
         "pkgs_gaming",
     ],
     "laptop": [
@@ -18,7 +17,6 @@ HOSTTYPE_CATEGORIES = {
         "pkgs_fonts",
         "pkgs_music",
         "pkgs_dev",
-        "pkgs_nvim",
     ],
 }
 
