@@ -31,6 +31,8 @@ pkgs_common:
   - imagemagick
   - fastfetch
   - debtap
+  # nc command
+  - openbsd-netcat
   # tui file explorer
   - yazi
 
