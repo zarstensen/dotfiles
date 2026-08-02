@@ -1,26 +1,10 @@
 pkgs_common:
-    # apps
-  - kitty
-  - firefox
-  - discord
-  - spotify-launcher
-  - opencode
-  - obsidian
-  - dolphin
-  - localsend
-    # admin popup for dolphin
-  - kio-admin
-    # extract context menu
-  - ark
-  - eww
-
   - fish
 
   - fzf
   - 7zip
   - btop
   - htop
-  - dragon-drop
   - wget
   - socat
   - pandoc-cli
@@ -36,7 +20,6 @@ pkgs_common:
   # tui file explorer
   - yazi
 
-  - wev
   - stow
 
   - wl-clipboard
@@ -49,38 +32,17 @@ pkgs_common:
   - gst-plugin-pipewire
     # media keys
   - playerctl
-    # GUI system audio mixer
-  - pavucontrol
 
     # networking
   - networkmanager
-    # tray icon for networkmanager
-  - network-manager-applet
     # cisco vpn support
   - networkmanager-openconnect
-
-    # hyprland stuff
-  - swaync
-  - waybar
-  - hyprgraphics
-  - hypridle
-  - hyprlock
-  - hyprpicker
-  - hyprpolkitagent
-  - hyprshutdown
-  - hyprutils
-  - hyprtoolkit
-    # X11 display server for X11 apps
-  - xorg-server
-  - xorg-xinit
-
-  - zsa-keymapp-bin
 
     # btrfs stuff (maybe not needed with cachy?)
   - snapper
   - snap-pac
   - grub-btrfs
-    # add windows entry to boot menu
+    # add windows entry to boot menu (specifically grub)
   - os-prober
 
     # auth stuff
@@ -89,37 +51,9 @@ pkgs_common:
     # prevent out of memory crashes
   - earlyoom
 
-    # background manager (animated)
-  - awww
-
-    # walker things
-  - walker
-  - elephant
-  - elephant-archlinuxpkgs
-  - elephant-calc
-  - elephant-clipboard
-  - elephant-desktopapplications
-  - elephant-files
-  - elephant-websearch
-  - elephant-windows
-
-    # xdg stuff for what?
-  - xdg-desktop-portal-gtk
-  - xdg-desktop-portal-hyprland
-  - xdg-utils
-
   - texlive
-    # manage displays on wayland
-  - nwg-displays
-    # run qt apps natively on wayland
-  - qt5-wayland
-  - qt6-wayland
-  - qt5-graphicaleffects
-  - qt5-quickcontrols2
-    # dolphin extract context menu i think
-  - archlinux-xdg-menu
 
-    # neovim
+  # neovim
   - neovim
   - fzf
   - tree-sitter-cli
