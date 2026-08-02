@@ -1,1 +1,71 @@
+pkgs_hyprland:
+  # === desktop ===
+  - hyprland
+  - hyprgraphics # this is maybe included as dependency of hyprland?
+  - hyprutils
+  - hyprtoolkit
+  # background manager (animated)
+  - awww
+  # notifications
+  - swaync
+  - waybar
+  - hypridle
+  - hyprlock
+  - hyprpicker
+  # auth popup app
+  - hyprpolkitagent
+  - hyprshutdown
+  # manage displays on wayland
+  - nwg-displays
+  # run qt apps natively on wayland
+  - qt5-wayland
+  - qt6-wayland
+  - qt5-graphicaleffects
+  - qt5-quickcontrols2
+  # X11 display server for X11 apps
+  - xorg-server
+  - xorg-xinit
+  # xdg stuff for what?
+  - xdg-desktop-portal-gtk
+  - xdg-desktop-portal-hyprland
+  - xdg-utils
+  # application launcher
+  - walker
+  - elephant
+  - elephant-archlinuxpkgs
+  - elephant-calc
+  - elephant-clipboard
+  - elephant-desktopapplications
+  - elephant-files
+  - elephant-websearch
+  - elephant-windows
+  # tray icon for networkmanager
+  - network-manager-applet
+  
+  # === apps ===
+  - kitty
+  - firefox
+  - discord
+  - spotify-launcher
+  - opencode
+  - obsidian
+  - dolphin
+    # dolphin extract context menu i think
+  - archlinux-xdg-menu
+  - localsend
+  # admin popup for dolphin?
+  - kio-admin
+  # extract context menu
+  - ark
+  # GUI system audio mixer
+  - pavucontrol
+  - zsa-keymapp-bin
 
+  # === utils ===
+  # drag and drop from terminal
+  - dragon-drop
+  # input testing
+  - wev
+
+  - eww
+  
