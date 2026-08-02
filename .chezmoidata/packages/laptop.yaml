@@ -5,4 +5,4 @@ pkgs_laptop:
     # keyboard mapping
   - keyd
     # remote desktop from windows
-  - rustdesk
+  - rustdesk-bin
