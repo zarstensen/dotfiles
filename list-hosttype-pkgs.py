@@ -6,6 +6,7 @@ import sys
 HOSTTYPE_CATEGORIES = {
     "desktop": [
         "pkgs_common",
+        "pkgs_hyprland",
         "pkgs_fonts",
         "pkgs_music",
         "pkgs_dev",
@@ -13,6 +14,7 @@ HOSTTYPE_CATEGORIES = {
     ],
     "laptop": [
         "pkgs_common",
+        "pkgs_hyprland",
         "pkgs_laptop",
         "pkgs_fonts",
         "pkgs_music",
