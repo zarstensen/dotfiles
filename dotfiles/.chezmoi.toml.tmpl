@@ -2,7 +2,7 @@ mode = "symlink"
 
 [data]
 {{- $choices := list -}}
-{{- range glob (joinPath .chezmoi.sourceDir "../hosttypes/*") -}}
+{{- range glob (joinPath .chezmoi.workingTree "conman/hosttypes/*") -}}
 {{- $choices = append $choices (regexReplaceAll "\\.[^./]+$" (base .) "") -}}
 {{- end }}
 hosttype = "{{ 
