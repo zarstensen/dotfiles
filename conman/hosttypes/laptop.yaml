@@ -8,4 +8,4 @@ pkgs:
 scripts:
   - common/*
   - packages/run_once_after_install-rustdesk.sh
-  - services/run_after_{common,laptop}.sh
+  - services/run_after_{common,laptop,hyprland}.sh

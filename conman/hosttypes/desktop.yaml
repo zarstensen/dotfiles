@@ -7,4 +7,4 @@ pkgs:
   - music
 scripts:
   - common/*
-  - services/run_after_common.sh
+  - services/run_after_{common,hyprland}.sh

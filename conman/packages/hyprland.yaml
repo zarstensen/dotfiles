@@ -59,6 +59,8 @@
   # GUI system audio mixer
   - pavucontrol
   - zsa-keymapp-bin
+  # GUI for firewall
+  - gufw 
 
 - .utils:
   # drag and drop from terminal

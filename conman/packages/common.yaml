@@ -12,6 +12,8 @@
   - moreutils
   - fastfetch
   - debtap
+  # better copy command
+  - rsync
   # nc command
   - openbsd-netcat
   # tui file explorer

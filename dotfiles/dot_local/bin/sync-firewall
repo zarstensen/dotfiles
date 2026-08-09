@@ -1,0 +1,4 @@
+#!/bin/bash
+cp /etc/ufw/user.rules "$CHEZMOI_SOURCE_DIR/dot_local/systemfiles/etc/ufw/user.rules"
+cp /etc/ufw/user6.rules "$CHEZMOI_SOURCE_DIR/dot_local/systemfiles/etc/ufw/user6.rules"
+

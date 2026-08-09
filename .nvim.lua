@@ -1,4 +1,5 @@
 print("stuffing")
+
 vim.schedule(function()
 	local deb = require("utils.debounce"):new(1000)
 
@@ -12,7 +13,7 @@ vim.schedule(function()
 	install_packs_task:inc_reference()
 
 	vim.api.nvim_create_autocmd("BufWritePost", {
-		pattern = ".chezmoidata/packages/*.yaml",
+		pattern = "conman/packages/*.yaml",
 		callback = deb:debounced(function(_)
 			install_packs_task:restart()
 			vim.cmd(":OverseerOpen")
