@@ -1,0 +1,7 @@
+pkgs:
+  - common
+  - dev
+  - fonts
+scripts:
+  - common/*
+  - services/run_after_common.sh

@@ -1,0 +1,11 @@
+pkgs:
+  - common
+  - dev
+  - fonts
+  - hyprland
+  - laptop
+  - music
+scripts:
+  - common/*
+  - packages/run_once_after_install-rustdesk.sh
+  - services/run_after_{common,laptop}.sh

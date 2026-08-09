@@ -1,0 +1,10 @@
+pkgs:
+  - common
+  - dev
+  - fonts
+  - gaming
+  - hyprland
+  - music
+scripts:
+  - common/*
+  - services/run_after_common.sh

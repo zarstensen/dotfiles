@@ -1,7 +1,0 @@
-pkgs_gaming:
-  - steam
-    # wireless xbox controller
-  - xpadneo-dkms-git
-    # profiling hardware
-  - stress
-  - snake

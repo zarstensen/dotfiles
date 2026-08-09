@@ -1,0 +1,20 @@
+mode = "symlink"
+
+[data]
+{{- $choices := list -}}
+{{- range glob (joinPath .chezmoi.sourceDir "../hosttypes/*") -}}
+{{- $choices = append $choices (regexReplaceAll "\\.[^./]+$" (base .) "") -}}
+{{- end }}
+hosttype = "{{ 
+    promptChoiceOnce 
+    . "hosttype"
+    "What type of host is this" 
+    $choices 
+   }}"
+
+[scriptEnv]
+_CHEZMOI_HOSTTYPE = "{{- .hosttype -}}"
+
+[hooks.apply.pre]
+script = "{{- .chezmoi.sourceDir -}}/conman-run.sh"
+args = [ "conman.link-scripts" ]

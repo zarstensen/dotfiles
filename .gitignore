@@ -1,1 +1,3 @@
 .dmypy.json
+dotfiles/.chezmoiscripts
+**/__pycache__

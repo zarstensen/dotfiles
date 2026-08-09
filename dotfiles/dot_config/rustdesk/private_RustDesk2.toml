@@ -1,0 +1,12 @@
+# OBS: this is conveniently NOT symlinked as its marked as private_, which is nice because rustdesk populates this with a local-ip field which should not be shared.
+rendezvous_server = 'rs-ny.rustdesk.com:21116'
+nat_type = 1
+serial = 0
+unlock_pin = ''
+trusted_devices = ''
+
+[options]
+relay-server = '0.0.0.0'
+custom-rendezvous-server = '0.0.0.0'
+direct-server = 'Y'
+av1-test = 'Y'
