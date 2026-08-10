@@ -19,6 +19,9 @@ hosttype = "{{- $hosttype -}}"
 [scriptEnv]
 _CHEZMOI_HOSTTYPE = "{{- $hosttype -}}"
 
+[hooks.init.post]
+script = "{{- .chezmoi.sourceDir -}}/setup-env.sh"
+
 [hooks.apply.pre]
 script = "{{- .chezmoi.sourceDir -}}/conman-run.sh"
 args = [ "conman.link-scripts" ]
