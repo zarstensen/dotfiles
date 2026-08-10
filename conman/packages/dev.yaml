@@ -19,7 +19,7 @@
 # godo
 - godot
 # python
-- python312:
+- python:
   - python-debugpy
   - python-lark-parser
   - python-pip

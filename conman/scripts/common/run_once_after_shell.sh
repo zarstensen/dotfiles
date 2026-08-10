@@ -1,4 +1,4 @@
 #!/bin/bash
 set -eufo pipefail
 
-chsh -s "$(command -v fish)"
+chsh -s "$(readlink -f $(command -v fish))"

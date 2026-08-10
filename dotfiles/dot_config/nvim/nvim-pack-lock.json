@@ -110,8 +110,9 @@
       "src": "https://github.com/iamcco/markdown-preview.nvim"
     },
     "mason-lock.nvim": {
-      "rev": "b75e2de585637a61b2fb818dc33dad7863b7b0c4",
-      "src": "https://github.com/zapling/mason-lock.nvim"
+      "rev": "374c31b858f53c9576acf780d44e0a339739ff4f",
+      "src": "https://github.com/zarstensen/mason-lock.nvim",
+      "version": "'opt-evlistener'"
     },
     "mason-lspconfig.nvim": {
       "rev": "67029ccdac1ef8941e13b826417bc0ffac24cc86",
@@ -203,7 +204,7 @@
       "src": "https://github.com/rcarriga/nvim-dap-ui"
     },
     "nvim-dap-view": {
-      "rev": "210b2c0e4acc08aad23fbd5a7989dd0169f716d0",
+      "rev": "43a2ccf5618ea26a9b11575ff18ded1cc82746bf",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-dap-virtual-text": {
@@ -329,7 +330,7 @@
       "src": "https://github.com/folke/trouble.nvim"
     },
     "ts-install.nvim": {
-      "rev": "492aadc8e7fb05e9cc88ca5bff5198592dac8862",
+      "rev": "909db1b8c7dcefdbe851418cb40fd4c99be31c39",
       "src": "https://github.com/lewis6991/ts-install.nvim"
     },
     "venv-selector.nvim": {

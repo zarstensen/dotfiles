@@ -4,7 +4,7 @@ vim.pack.add({
 	"https://github.com/mason-org/mason.nvim",
 	"https://github.com/mason-org/mason-lspconfig.nvim",
 	-- 3rd party lock file for mason packages
-	"https://github.com/zapling/mason-lock.nvim",
+	{ src = "https://github.com/zarstensen/mason-lock.nvim", version = "opt-evlistener" },
 	-- this is for auto installing mason stuff, so specify mason config in config files
 	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
 	-- extra capabilities for blink.cmp
@@ -212,7 +212,7 @@ vim.list_extend(ensure_installed, {
 	"stylua", -- Used to format Lua code
 })
 
-require("mason-lock").setup()
+require("mason-lock").setup({})
 
 -- TODO: why is this better than ensure_installed in mason-lspconfig?
 require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
