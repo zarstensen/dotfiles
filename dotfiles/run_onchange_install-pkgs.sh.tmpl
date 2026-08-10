@@ -10,7 +10,6 @@ STATE_FILE="$STATE_DIR/managed-packages.txt"
 mkdir -p "$STATE_DIR"
 touch "$STATE_FILE"
 
-installed_pkgs=$(pacman -Qq)
 
 required_pkgs=$(./conman-run.sh conman.list-pkgs)
 
@@ -18,12 +17,14 @@ remove_pkgs=$(comm -23 <(cat "$STATE_FILE" | sort -u) <(echo "$required_pkgs" | 
 # dont try to remove packages which are not installed
 remove_pkgs=$(comm -12 <(echo "$remove_pkgs") <(yay -Qq | sort -u))
 
-missing_pkgs=$(comm -13 <(echo "$installed_pkgs" | sort -u) <(echo "$required_pkgs" | sort -u ) )
 
 if [ -n "$remove_pkgs" ] ; then
     echo REMOVING packages
     yay -Rns --noconfirm $remove_pkgs
 fi
+
+installed_pkgs=$(pacman -Qq)
+missing_pkgs=$(comm -13 <(echo "$installed_pkgs" | sort -u) <(echo "$required_pkgs" | sort -u ) )
 
 if [ -n "$missing_pkgs" ] ; then
     yay -S --needed --noconfirm $missing_pkgs
