@@ -17,3 +17,6 @@ hl.config({
     misc =  { disable_autoreload = true, initial_workspace_tracking = 2 }
 })
 
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

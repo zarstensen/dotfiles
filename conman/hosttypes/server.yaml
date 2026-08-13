@@ -4,4 +4,4 @@ pkgs:
   - fonts
 scripts:
   - common/*
-  - services/run_after_common.sh
+  - services/run_once_after_common.sh

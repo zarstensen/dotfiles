@@ -1,4 +1,6 @@
 - hyprland:
+  - uwsm
+  - libnewt
   - hyprgraphics # this is maybe included as dependency of hyprland?
   - hyprutils
   - hyprtoolkit
@@ -16,10 +18,16 @@
   # manage displays on wayland
   - nwg-displays
   # run qt apps natively on wayland
-  - qt5-wayland
-  - qt6-wayland
-  - qt5-graphicaleffects
-  - qt5-quickcontrols2
+  - .qt:
+    - qt5-svg
+    - qt5-wayland
+    - qt6-wayland
+    - qt5-graphicaleffects
+    - qt5-quickcontrols2
+  - quickshell:
+    - qt6-imageformats
+    - qt6-multimedia
+    - qt6-svg
   # X11 display server for X11 apps
   - xorg-server:
     - xorg-xinit
@@ -39,6 +47,8 @@
     - elephant-windows
   # tray icon for networkmanager
   - network-manager-applet
+  # GUI sudo prompt
+  - zenity
 
   # === apps ===
 - .apps:

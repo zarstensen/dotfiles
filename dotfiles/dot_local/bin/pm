@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo -E HOME="$HOME" nvim ~/.local/share/chezmoi/.chezmoidata/packages${1:+"/$1"}
+cd ~/.local/share/chezmoi/conman/packages
+nvim ${1:+"/$1"} -c 'Neotree toggle'

@@ -1,4 +1,3 @@
-print("YAAAAYÆÆÆÆ")
 vim.filetype.add({
 	pattern = {
 		[".*%.tmpl$"] = function(path, _)

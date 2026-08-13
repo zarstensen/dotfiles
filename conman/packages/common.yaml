@@ -49,6 +49,8 @@
 # neovim
 - neovim:
   - fzf
+  - fd
+  - npm
   - tree-sitter-cli
   - unzip
   - pokemon-colorscripts-git
