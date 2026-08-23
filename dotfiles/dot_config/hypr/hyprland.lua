@@ -14,9 +14,5 @@ require("config.visuals")
 
 hl.config({
 	xwayland = { force_zero_scaling = true },
-    misc =  { disable_autoreload = true, initial_workspace_tracking = 2 }
+	misc = { disable_autoreload = true, initial_workspace_tracking = 0 },
 })
-
-
--- For Noctalia Color templates
-require("noctalia").apply_theme()

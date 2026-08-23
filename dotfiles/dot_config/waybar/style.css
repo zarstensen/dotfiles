@@ -37,7 +37,7 @@ Styleguide Nord
 /* TODO: blur tooltip backgrounds */
 
 tooltip {
-    background-color: rgba(236, 239, 244, 0.8);
+    background-color: rgba(236, 239, 244, 1);
 }
 
 tooltip label {

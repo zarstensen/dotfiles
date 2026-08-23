@@ -1,3 +1,4 @@
 .dmypy.json
 dotfiles/.chezmoiscripts
 **/__pycache__
+.qmlls.ini

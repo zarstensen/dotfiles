@@ -110,7 +110,7 @@
         "tooltip": false
     },
     "custom/logoff": {
-        "format": "<span font='13'>\uedf5</span>",
+        "format": "<span font='13'>󱠨</span>",
         "tooltip": false,
         "on-click": "hyprshutdown"
     },

@@ -18,3 +18,4 @@ hl.config({
 
 hl.device({ name = "epic-mouse-v1", sensitivity = -0.5 })
 hl.device({ name = "sigmachip-usb-mouse", sensitivity = -0.3 })
+hl.device({ name = "razer-razer-basilisk-v3", sensitivity = -0.5 })

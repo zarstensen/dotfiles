@@ -74,7 +74,15 @@ require("snacks").setup({
 	-- NOTE: replaced with neogit
 	-- lazygit = {},
 	scroll = {},
-	terminal = {},
+	terminal = {
+		start_insert = false,
+		auto_insert = false,
+		win = {
+			keys = {
+				term_normal = { "<esc>", "<C-\\><C-n>", mode = "t", desc = "Exit terminal mode" },
+			},
+		},
+	},
 	statuscolumn = {}, -- for showing marks on the left side
 	notifier = { level = vim.log.levels.WARN }, -- larger notifications, maybe not?
 	rename = {}, -- needed by neotree

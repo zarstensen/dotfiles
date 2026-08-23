@@ -46,6 +46,7 @@ hl.config({
 })
 
 hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
+hl.layer_rule({ match = { namespace = "bar" }, blur = true })
 hl.layer_rule({ match = { namespace = "walker" }, blur = true, ignore_alpha = 0.4 })
 
 hl.window_rule({

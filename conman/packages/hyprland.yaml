@@ -1,4 +1,5 @@
 - hyprland:
+  - sddm
   - uwsm
   - libnewt
   - hyprgraphics # this is maybe included as dependency of hyprland?
@@ -24,6 +25,14 @@
     - qt6-wayland
     - qt5-graphicaleffects
     - qt5-quickcontrols2
+    # styling gui
+    - qt6ct
+    - qt5ct
+    # 3rd party styling i think?
+    - kvantum
+    - kvantum-theme-nordic-git
+  - .gtk:
+    - nordic-theme-git
   - quickshell:
     - qt6-imageformats
     - qt6-multimedia
@@ -71,6 +80,8 @@
   - zsa-keymapp-bin
   # GUI for firewall
   - gufw 
+  # Password Manager
+  - bitwarden
 
 - .utils:
   # drag and drop from terminal

@@ -54,3 +54,4 @@
   - tree-sitter-cli
   - unzip
   - pokemon-colorscripts-git
+  - unixodbc # thing needed for qml lsp support

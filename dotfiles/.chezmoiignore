@@ -1,2 +1,3 @@
 conman-run.sh
 setup-env.sh
+.qmlls.ini

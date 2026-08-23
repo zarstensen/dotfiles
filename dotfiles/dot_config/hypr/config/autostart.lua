@@ -15,5 +15,5 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpm reload -n")
 
 	hl.exec_cmd("elephant")
-	hl.exec_cmd("waybar")
+	hl.exec_cmd("qs -c screen-shell")
 end)
