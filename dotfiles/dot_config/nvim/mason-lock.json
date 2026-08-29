@@ -3,6 +3,5 @@
   "debugpy": "1.8.21",
   "delve": "v1.27.1",
   "java-debug-adapter": "0.59.0",
-  "qmlls": "0.7",
   "stylua": "v2.5.2"
 }

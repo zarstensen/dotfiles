@@ -1,5 +1,6 @@
 - hyprland:
-  - sddm
+  - sddm:
+      - services/sddm.sh: once after
   - uwsm
   - libnewt
   - hyprgraphics # this is maybe included as dependency of hyprland?
@@ -14,7 +15,8 @@
   - hyprlock
   - hyprpicker
   # auth popup app
-  - hyprpolkitagent
+  - hyprpolkitagent:
+    - services/hyprpolkitagent.sh: once after
   - hyprshutdown
   # manage displays on wayland
   - nwg-displays
@@ -32,8 +34,11 @@
     - kvantum
     - kvantum-theme-nordic-git
   - .gtk:
-    - nordic-theme-git
+    - nordic-theme-git # dark mode nord
+    - nordic-polar-theme # light mode nord
   - quickshell:
+    # do some wonky symlinking to make qmlls work with chezmoi + quickshell
+    - packages/setup-qmlls.sh.tmpl: once after
     - qt6-imageformats
     - qt6-multimedia
     - qt6-svg
@@ -90,5 +95,4 @@
   - dragon-drop
   # input testing
   - wev
-
   - eww

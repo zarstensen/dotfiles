@@ -1,0 +1,38 @@
+    # general tools and ide's
+- git:
+  - lazygit
+  - serie
+- .ides:
+  - visual-studio-code-bin
+  - jetbrains-toolbox
+  - pycharm-community-edition
+  - drawio-desktop
+# c++
+- .c++:
+  - cmake
+  - meson
+# dotnet
+- .dotnet:
+  - dotnet-runtime
+  - dotnet-runtime-8.0
+  - dotnet-sdk
+# godo
+- godot
+# python
+- python:
+  - python-debugpy
+  - python-lark-parser
+  - python-pip
+  - python-pipx
+  - python-pynvim
+  - python-scipy
+  - python-sympy
+# rust
+- rustup:
+  - rust-analyzer
+# go
+- go:
+  - go-tools
+  - gotestsum
+# lua
+- luarocks

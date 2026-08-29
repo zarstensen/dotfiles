@@ -1,4 +1,6 @@
 - fish:
+  # set fish to be default shell
+  - common/default-shell.sh: once after
   - fzf
   - 7zip
   - btop
@@ -18,6 +20,9 @@
   - openbsd-netcat
   # tui file explorer
   - yazi
+- git:
+  # setup git credential manager so we can login via website
+  - common/git-creds.sh: once after
 - openssh
 - stow
 - wl-clipboard
@@ -44,7 +49,8 @@
 - gnome-keyring:
   - seahorse
   # prevent out of memory crashes
-- earlyoom
+- earlyoom:
+  - services/earlyoom.sh: once after
 - texlive
 # neovim
 - neovim:
