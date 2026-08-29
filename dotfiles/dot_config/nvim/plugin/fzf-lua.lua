@@ -19,7 +19,7 @@ local file_cont_fzf_opts = {
 local config = {
 	ui_select = {},
 	grep = {
-		rg_opts = "--hidden --column --line-number --no-heading --color=always",
+		rg_opts = "--hidden --column --line-number --no-heading --color=always --follow",
 	},
 }
 

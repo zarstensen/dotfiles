@@ -7,7 +7,8 @@ import Quickshell.Wayland
 import QtQuick
 import QtQuick.Layouts
 import qs.style
-import qs.bar.widgets
+import qs.utils
+import qs.components.bar.widgets
 
 PanelWindow {
     required property var modelData
@@ -15,7 +16,7 @@ PanelWindow {
     WlrLayershell.namespace: "bar"
     screen: modelData
     implicitHeight: Style.nBarHeight
-    color: Qt.rgba(Style.cBackground.r, Style.cBackground.g, Style.cBackground.b, 0.1)
+    color: Colors.setAlpha(Style.cBackground, 0.1)
 
     anchors {
         bottom: true

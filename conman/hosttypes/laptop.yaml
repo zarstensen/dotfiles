@@ -5,9 +5,3 @@ pkgs:
   - hyprland
   - laptop
   - music
-scripts:
-  - common/*
-  - packages/run_once_after_install-rustdesk.sh
-  - services/run_once_after_{common,laptop,hyprland}.sh
-  - packages/run_once_after_qs-setup-qmlls.sh.tmpl
-  - run_once_after_theming.sh

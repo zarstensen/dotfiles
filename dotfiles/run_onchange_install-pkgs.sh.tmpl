@@ -13,6 +13,8 @@ touch "$STATE_FILE"
 
 required_pkgs=$(./conman-run.sh conman.list-pkgs)
 
+echo $required_pkgs
+
 remove_pkgs=$(comm -23 <(cat "$STATE_FILE" | sort -u) <(echo "$required_pkgs" | sort -u) )
 # dont try to remove packages which are not installed
 remove_pkgs=$(comm -12 <(echo "$remove_pkgs") <(yay -Qq | sort -u))

@@ -13,7 +13,7 @@ Singleton {
     property color cBackground: Nord.snowStorm2
     property color cBackgroundMuted: Nord.snowStorm1
 
-    property color cForeground: Nord.polarNight3
+    property color cForeground: Nord.polarNight1
 
     property color cText: Nord.polarNight2
     property color cTextMuted: Nord.polarNight3
@@ -67,4 +67,5 @@ Singleton {
     // misc. numeric constants
     property int nBarHeight: 45
     property int nWidgetSpacing: (nBarHeight - 12) / 2
+    property int nRadius: 4
 }

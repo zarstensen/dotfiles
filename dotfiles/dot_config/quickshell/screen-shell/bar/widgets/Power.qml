@@ -5,7 +5,8 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import qs.style
 import qs.style.behaviors
-import qs.bar.singletons
+import qs.components.bar.controllers
+import qs.utils
 
 WrapperMouseArea {
     id: area
@@ -31,7 +32,7 @@ WrapperMouseArea {
     }
 
     WrapperRectangle {
-        color: area.containsMouse ? Style.cForeground : Qt.rgba(Style.cForeground.r, Style.cForeground.g, Style.cForeground.b, 0)
+        color: area.containsMouse ? Style.cForeground : Colors.setAlpha(Style.cForeground, 0)
         FastColor on color {}
         radius: 15
         readonly property real hPadding: (Style.nBarHeight - Style.fIcon.pixelSize * 0.8) / 2

@@ -2,6 +2,3 @@ pkgs:
   - common
   - dev
   - fonts
-scripts:
-  - common/*
-  - services/run_once_after_common.sh

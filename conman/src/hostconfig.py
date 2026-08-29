@@ -1,19 +1,12 @@
 from __future__ import annotations
 
 import os
-from enum import Enum
 from pathlib import Path
 
 import yaml
 from pydantic import BaseModel
 
-# TODO: no point in this being static like this?
-class HostType(Enum):
-    DESKTOP = "desktop"
-    LAPTOP = "laptop"
-    HEADLESS = "headless"
-    UNKNOWN = None
-
+type HostType = str | None
 
 class HostConfig(BaseModel):
     pkgs: tuple[str, ...] = tuple()
@@ -21,18 +14,11 @@ class HostConfig(BaseModel):
 
 
 def get_host_type() -> HostType:
-    hosttype = os.environ["_CHEZMOI_HOSTTYPE"]
-
-    for ht in HostType:
-        if ht.value == hosttype:
-            return ht
-
-    return HostType.UNKNOWN
-
+    return os.environ["_CHEZMOI_HOSTTYPE"]
 
 def get_host_config(config_dir: Path, host_type: HostType) -> HostConfig:
-    if host_type == HostType.UNKNOWN:
-        raise ValueError(f"Unknown Host '{host_type}'")
+    if host_type == None:
+        raise ValueError(f"Unknown Host")
 
-    with open(config_dir / f"{host_type.value}.yaml", "r") as f:
+    with open(config_dir / f"{host_type}.yaml", "r") as f:
         return HostConfig.model_validate(yaml.safe_load(f))

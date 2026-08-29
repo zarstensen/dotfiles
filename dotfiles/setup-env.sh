@@ -18,6 +18,6 @@ fi
 # install dependencies for conman
 echo ======== Installing Conman Dependencies ========
 
-sudo pacman -S --needed --noconfirm python python-yaml python-pydantic python-bracex
+sudo pacman -S --needed --noconfirm python python-yaml python-pydantic
 
 echo ======== Post Init Setup Done! ========

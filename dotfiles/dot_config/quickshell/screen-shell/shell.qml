@@ -1,13 +1,12 @@
+//@ pragma UseQApplication
 //@ pragma Env QS_NO_RELOAD_POPUP=1
 // qmllint disable import
 // qmllint disable unqualified
 import Quickshell
 import QtQuick
-import qs.bar
+import qs.components.bar
 
 Scope {
-    id: root
-
     Variants {
         model: Quickshell.screens
 

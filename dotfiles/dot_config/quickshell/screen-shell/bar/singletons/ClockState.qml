@@ -1,14 +1,20 @@
 pragma Singleton
 
 import Quickshell
+import Quickshell.Io
 
 Singleton {
-    id: root
+    FileView {
+        id: stateFile
+        path: Quickshell.statePath("clock-state.json")
+        watchChanges: true
+        onFileChanged: reload()
+        onAdapterUpdated: writeAdapter()
 
-    PersistentProperties {
-        id: persist
-        reloadableId: "clockExpandState"
-        property bool expanded: false
+        JsonAdapter {
+            id: persist
+            property bool expanded: false
+        }
     }
 
     property alias expanded: persist.expanded
