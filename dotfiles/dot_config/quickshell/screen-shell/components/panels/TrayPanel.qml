@@ -1,16 +1,20 @@
-// TODO: tooltips
+// TODO: tooltips + custom context menu so we can use focus grab OR another solution and pickle is just lying to me
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 import QtQuick
 import qs.style
+import qs.style.behaviors
 import qs.controls
 import qs.utils
 
 PopupWindow {
     id: trayPanel
     required property Item item
+    property bool open: false
     color: "transparent"
+    visible: panel.opacity != 0
 
     implicitWidth: content.implicitWidth
     implicitHeight: content.implicitHeight
@@ -27,6 +31,9 @@ PopupWindow {
         radius: Style.nRadius
         color: Colors.setAlpha(Style.cBackground, 0.8)
         anchors.fill: parent
+
+        opacity: open ? 1 : 0
+        FastNumber on opacity {}
 
         WrapperItem {
             id: content
@@ -46,7 +53,6 @@ PopupWindow {
                         hoverEnabled: true
 
                         onClicked: mouse => {
-                            console.log(mouse.button);
                             if (mouse.button == Qt.LeftButton) {
                                 modelData.activate();
                             }
@@ -54,7 +60,7 @@ PopupWindow {
                                 modelData.secondaryActivate();
                             }
                             if (mouse.button == Qt.RightButton) {
-                                let global_pos = trayArea.mapToItem(trayPanel.contentItem, mouse.x, mouse.y)
+                                let global_pos = trayArea.mapToItem(trayPanel.contentItem, mouse.x, mouse.y);
                                 modelData.display(trayPanel, global_pos.x, global_pos.y);
                             }
                         }

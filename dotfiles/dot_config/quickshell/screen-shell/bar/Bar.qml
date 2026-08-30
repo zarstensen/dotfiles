@@ -26,7 +26,6 @@ PanelWindow {
 
     RowLayout {
         id: left
-        spacing: Style.nWidgetSpacing
 
         anchors {
             left: parent.left
@@ -41,7 +40,6 @@ PanelWindow {
 
     RowLayout {
         id: right
-        spacing: Style.nWidgetSpacing
 
         anchors {
             right: parent.right
@@ -52,10 +50,13 @@ PanelWindow {
 
         Tray {
             Layout.fillHeight: true
+            leftMargin: Style.nWidgetSpacing / 2
+            rightMargin: Style.nWidgetSpacing / 2
         }
 
         Clock {
             Layout.fillHeight: true
+            leftMargin: Style.nWidgetSpacing / 2
         }
     }
 }
