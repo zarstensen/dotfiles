@@ -3,7 +3,7 @@ local hs = require("plugins.hyprsplit")
 local mainMod = c.MAIN_MOD
 
 -- General binds
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprquickframe"))
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.exec_cmd("screenshot"))
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(c.APPS.TERMINAL))
 hl.bind(mainMod .. " + BACKSPACE", hl.dsp.window.close())
 hl.bind(mainMod .. " + CTRL + SHIFT + M", hl.dsp.exit())
@@ -13,7 +13,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(c.APPS.MENU_OPEN))
 hl.bind(mainMod .. " + P", hl.dsp.layout("pseudo"))
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Focus movement
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))

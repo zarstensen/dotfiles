@@ -1,3 +1,3 @@
 #!/bin/bash
-cd ~/.local/share/chezmoi/conman/packages
+cd ~/.local/share/chezmoi/conman/specs
 nvim ${1:+"/$1"} -c 'Neotree toggle'

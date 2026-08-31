@@ -42,6 +42,11 @@
     - qt6-imageformats
     - qt6-multimedia
     - qt6-svg
+  - .screenshot:
+    - slurp
+    - imagemagick
+    - grim
+    - hyprpicker
   # X11 display server for X11 apps
   - xorg-server:
     - xorg-xinit
