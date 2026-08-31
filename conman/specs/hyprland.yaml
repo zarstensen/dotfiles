@@ -1,4 +1,5 @@
 - hyprland:
+  - hyprland/theming.sh: once after
   - sddm:
       - services/sddm.sh: once after
   - uwsm
