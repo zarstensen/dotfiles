@@ -52,6 +52,8 @@
 - earlyoom:
   - services/earlyoom.sh: once after
 - texlive
+# filewatcher
+- inotify-tools
 # neovim
 - neovim:
   - fzf
