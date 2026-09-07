@@ -52,8 +52,11 @@
 - earlyoom:
   - services/earlyoom.sh: once after
 - texlive
+# filewatcher
+- inotify-tools
 # neovim
 - neovim:
+  - packages/easydotnet.sh: once after
   - fzf
   - fd
   - npm

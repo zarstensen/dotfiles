@@ -16,6 +16,7 @@
   - dotnet-runtime
   - dotnet-runtime-8.0
   - dotnet-sdk
+  - aspnet-runtime
 # godo
 - godot
 # python
