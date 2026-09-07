@@ -1,31 +1,45 @@
 #!/usr/bin/bash
-scale=$(hyprctl monitors -j | jq '.[] | select(.focused == true) | .scale')
+
+scr_shot_path="$(mktemp)"
+
+# cursor shows up on some systems for some reason,
+# so hide it explicitly here whilst we are taking the screenshot
 hyprctl eval "hl.config({ cursor = { visible = false } })"
+
+
+# freeze the display whilst we take the screenshot
 hyprpicker -rz &
-pid=$!
-image="$(mktemp)"
-grim "$image"
-hyprctl eval "hl.config({ cursor = { visible = true } })"
-region="$(slurp -b 0B0F1877 -c cdd6f4)"
-if [[ "$?" != 0 ]]; then # check if slurp was cancelled
-    kill -9 $pid
-    rm -f $image
+hyprpicker_pid=$!
+
+cleanup() {
+    kill -9 $hyprpicker_pid
+    rm -f $scr_shot_path
+    hyprctl eval "hl.config({ cursor = { visible = true } })"
+}
+
+# wait for hyprpicker to have frozen the screen before we slurp
+# otherwise the slurp overlay is not shown
+until hyprctl layers -j | jq -e '.. | objects | select(.namespace? == "hyprpicker")' >/dev/null 2>&1; do
+  sleep 0.05
+done
+
+slurp_region="$(slurp -b 0B0F1877 -c cdd6f4)"
+
+
+# check if slurp was cancelled
+if [[ "$?" != 0 ]]; then 
+    cleanup
     exit 1
 fi
-coords=${region%% *}
-cx=$(awk "BEGIN { printf(\"%.10f\", ${coords%%,*} * $scale) }")
-cy=$(awk "BEGIN { printf(\"%.10f\", ${coords##*,} * $scale) }")
-rect=${region##* }
-rx=$(awk "BEGIN { printf(\"%.10f\", ${rect%%x*} * $scale) }")
-ry=$(awk "BEGIN { printf(\"%.10f\", ${rect##*x} * $scale) }")
 
-magick "$image" -crop "${rx}x${ry}+${cx}+${cy}" "$image"
+# capture region with grim (-g option makes grim work with slurp regions)
+grim -g "$slurp_region" "$scr_shot_path"
 
-size=$(cat $image | wc -c)
+# dont keep the screenshot if it is of size 0?
+size=$(cat $scr_shot_path | wc -c)
 if [ "$size" -gt 0 ]; then
-    notify-send -i "$image" "📸 Screenshot copied to clipboard"
-    cat "$image" | wl-copy 
+    notify-send -i "$scr_shot_path" "📸 Screenshot copied to clipboard"
+    cat "$scr_shot_path" | wl-copy 
 fi
 
-rm -f $image
-kill -9 $pid
+cleanup
