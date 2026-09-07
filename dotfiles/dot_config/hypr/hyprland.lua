@@ -11,6 +11,7 @@ require("config.env")
 require("config.input")
 require("config.permissions")
 require("config.visuals")
+require("config.windowrules")
 
 hl.config({
 	xwayland = { force_zero_scaling = true },

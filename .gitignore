@@ -1,4 +1,8 @@
 .dmypy.json
 dotfiles/.chezmoiscripts
+dotfiles/dot_config/hypr/monitors.conf
+dotfiles/dot_config/hypr/monitors.lua
+dotfiles/dot_config/hypr/workspaces.conf
+dotfiles/dot_config/hypr/workspaces.lua
 **/__pycache__
 .qmlls.ini

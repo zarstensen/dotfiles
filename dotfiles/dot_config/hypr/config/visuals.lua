@@ -49,31 +49,6 @@ hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
 hl.layer_rule({ match = { namespace = "bar" }, blur = true })
 hl.layer_rule({ match = { namespace = "walker" }, blur = true, ignore_alpha = 0.4 })
 
-hl.window_rule({
-    name = "suppress-maximize-events",
-    match = { class = ".*" },
-    suppress_event = "maximize",
-})
-
-hl.window_rule({
-    name = "fix-xwayland-drags",
-    match = {
-        class = "^$",
-        title = "^$",
-        xwayland = true,
-        float = true,
-        fullscreen = false,
-        pin = false,
-    },
-    no_focus = true,
-})
-
-hl.window_rule({
-    name = "discord-comms",
-    match = { class = "(discord)" },
-    workspace = "special:comms",
-})
-
 -- animations
 
 hl.curve("easeOutQuint", { type = "bezier", points = { {0.23, 1}, {0.32, 1} } })

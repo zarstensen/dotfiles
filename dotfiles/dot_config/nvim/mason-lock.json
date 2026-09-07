@@ -6,5 +6,6 @@
   "lua-language-server": "3.19.1",
   "mypy": "2.3.1",
   "pyrefly": "1.2.0",
+  "rust-analyzer": "2026-08-31",
   "stylua": "v2.5.2"
 }
