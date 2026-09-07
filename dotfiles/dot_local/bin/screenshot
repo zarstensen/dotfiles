@@ -1,14 +1,11 @@
 #!/usr/bin/bash
-original_pos="$(hyprctl cursorpos | tr ',' ' ')"
-ox="${original_pos%% *}"
-oy="${original_pos##* }"
 scale=$(hyprctl monitors -j | jq '.[] | select(.focused == true) | .scale')
-hyprctl dispatch "hl.dsp.cursor.move({ x = 99999, y = 99999 })"
+hyprctl eval "hl.config({ cursor = { visible = false } })"
 hyprpicker -rz &
 pid=$!
 image="$(mktemp)"
 grim "$image"
-hyprctl dispatch "hl.dsp.cursor.move({ x = $ox, y = $oy })"
+hyprctl eval "hl.config({ cursor = { visible = true } })"
 region="$(slurp -b 0B0F1877 -c cdd6f4)"
 if [[ "$?" != 0 ]]; then # check if slurp was cancelled
     kill -9 $pid

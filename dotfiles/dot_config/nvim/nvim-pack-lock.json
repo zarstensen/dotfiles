@@ -53,6 +53,10 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim.git"
     },
+    "easy-dotnet.nvim": {
+      "rev": "640612c3d1f691ed47074ae0b262670057b18445",
+      "src": "https://github.com/GustavEikaas/easy-dotnet.nvim.git"
+    },
     "exrc.nvim": {
       "rev": "4346164895f432f361e453d837b612e6c7cbe3e6",
       "src": "https://github.com/jedrzejboczar/exrc.nvim"
