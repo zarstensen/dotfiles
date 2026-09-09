@@ -15,17 +15,25 @@ require("mini.ai").setup({
 	n_lines = 500,
 	custom_textobjects = {
 		B = require("mini.extra").gen_ai_spec.buffer(),
-		c =
-			-- Word with camel case support (also supports only Latin alphabet):
+		D = require("mini.extra").gen_ai_spec.diagnostic(),
+		I = require("mini.extra").gen_ai_spec.indent(),
+		L = require("mini.extra").gen_ai_spec.line(),
+		N = require("mini.extra").gen_ai_spec.number(),
+		-- Word with camel case support (also supports only Latin alphabet):
+		c = {
 			{
-				{
-					"%u[%l%d]+%f[^%l%d]",
-					"%f[%S][%l%d]+%f[^%l%d]",
-					"%f[%P][%l%d]+%f[^%l%d]",
-					"^[%l%d]+%f[^%l%d]",
-				},
-				"^().*()$",
+				"%u[%l%d]+%f[^%l%d]",
+				"%f[%S][%l%d]+%f[^%l%d]",
+				"%f[%P][%l%d]+%f[^%l%d]",
+				"^[%l%d]+%f[^%l%d]",
+				"%f[%a]%l+%d*", -- lowercase run after any non-letter
+				"%f[%w]%d+", -- digit run after any non-word
+				"%f[%u]%u%f[%A]%d*", -- single uppercase letter
+				"%f[%u]%u%l+%d*", -- PascalCase 
+				"%f[%u]%u%u+%d*", -- ALL-CAPS run
 			},
+			"^().*()$",
+		},
 	},
 })
 
@@ -34,13 +42,15 @@ require("mini.ai").setup({
 -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
 -- - sd'   - [S]urround [D]elete [']quotes
 -- - sr)'  - [S]urround [R]eplace [)] [']
-require("mini.surround").setup({ n_lines = 500, highlight_duration = 3000,
-  custom_surroundings = {
-    [')'] = { output = { left = '(', right = ')' } },
-    [']'] = { output = { left = '[', right = ']' } },
-    ['}'] = { output = { left = '{', right = '}' } },
-    ['>'] = { output = { left = '<', right = '>' } },
-  },
+require("mini.surround").setup({
+	n_lines = 500,
+	highlight_duration = 3000,
+	custom_surroundings = {
+		[")"] = { output = { left = "(", right = ")" } },
+		["]"] = { output = { left = "[", right = "]" } },
+		["}"] = { output = { left = "{", right = "}" } },
+		[">"] = { output = { left = "<", right = ">" } },
+	},
 })
 
 -- Simple and easy statusline.
@@ -62,6 +72,8 @@ statusline.setup({
 			local location = MiniStatusline.section_location({ trunc_width = 75 })
 			local search = MiniStatusline.section_searchcount({ trunc_width = 75 })
 
+			local overseer = require("mini.overseer-stl")()
+
 			-- Show the register letter when recording a macro (empty string otherwise)
 			local reg = vim.fn.reg_recording()
 			local recording = (reg ~= "") and ("rec: [" .. reg .. "]") or ""
@@ -72,7 +84,7 @@ statusline.setup({
 				"%<", -- Mark general truncate point
 				{ hl = "MiniStatuslineFilename", strings = { filename } },
 				"%=", -- End left alignment
-				{ hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
+				{ hl = "MiniStatuslineFileinfo", strings = { overseer, fileinfo } },
 				{ hl = mode_hl, strings = { search, location } },
 			})
 		end,

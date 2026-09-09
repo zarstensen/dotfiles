@@ -8,6 +8,8 @@ vim.pack.add({
 
 	-- persist breakpoints accross sessions
 	"https://github.com/Weissle/persistent-breakpoints.nvim",
+	-- overseer dap integration
+	"https://github.com/stevearc/overseer.nvim.git",
 })
 
 require("mason").setup()
