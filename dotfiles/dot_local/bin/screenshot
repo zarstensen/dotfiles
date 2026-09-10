@@ -2,11 +2,6 @@
 
 scr_shot_path="$(mktemp)"
 
-# cursor shows up on some systems for some reason,
-# so hide it explicitly here whilst we are taking the screenshot
-hyprctl eval "hl.config({ cursor = { visible = false } })"
-
-
 # freeze the display whilst we take the screenshot
 hyprpicker -rz &
 hyprpicker_pid=$!
@@ -14,7 +9,6 @@ hyprpicker_pid=$!
 cleanup() {
     kill -9 $hyprpicker_pid
     rm -f $scr_shot_path
-    hyprctl eval "hl.config({ cursor = { visible = true } })"
 }
 
 # wait for hyprpicker to have frozen the screen before we slurp
@@ -23,8 +17,7 @@ until hyprctl layers -j | jq -e '.. | objects | select(.namespace? == "hyprpicke
   sleep 0.05
 done
 
-slurp_region="$(slurp -b 0B0F1877 -c cdd6f4)"
-
+slurp_region="$(hyprctl clients -j | jq -r '.[] | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | slurp -b 0B0F1877 -c cdd6f4)"
 
 # check if slurp was cancelled
 if [[ "$?" != 0 ]]; then 

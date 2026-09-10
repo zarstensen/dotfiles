@@ -45,6 +45,10 @@
       "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
       "src": "https://github.com/github/copilot.vim"
     },
+    "csharp-explorer.nvim": {
+      "rev": "d2a9fad736b9b3c4e70b2ec6090d2b0cf3ace8fd",
+      "src": "https://github.com/dtrh95/csharp-explorer.nvim"
+    },
     "debugmaster.nvim": {
       "rev": "505d9a269d657ce8e0fa5601e0530f0d8798038c",
       "src": "https://github.com/MironPascalCaseFan/debugmaster.nvim"
@@ -254,6 +258,10 @@
     "nvim-tetris": {
       "rev": "d17c99fb527ada98ffb0212ffc87ccda6fd4f7d9",
       "src": "https://github.com/alec-gibson/nvim-tetris"
+    },
+    "nvim-tree.lua": {
+      "rev": "882c54f2815bf6d02663d482c2cf9dbadf4e9b07",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
       "rev": "8b98b4470eb326f1c7b50dae79f8c963568e5720",
