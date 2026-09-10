@@ -1,5 +1,5 @@
 -- do not bother loading test utils unless we also have an lsp enabled?`
-require("utils.lload")('LspAttach', function()
+require("utils.lload")("LspAttach", function()
 	vim.pack.add({
 		-- dependencies
 		"https://github.com/nvim-lua/plenary.nvim",
@@ -7,6 +7,8 @@ require("utils.lload")('LspAttach', function()
 		-- "https://github.com/antoinemadec/FixCursorHold.nvim",
 		"https://github.com/nvim-treesitter/nvim-treesitter",
 		"https://github.com/nvim-neotest/nvim-nio",
+		-- overseer integration
+		"https://github.com/stevearc/overseer.nvim.git",
 
 		"https://github.com/nvim-neotest/neotest",
 
@@ -40,12 +42,15 @@ require("utils.lload")('LspAttach', function()
 
 	-- TODO: do this in different files?
 	nt.setup({
+		consumers = {
+			overseer = require("neotest.consumers.overseer"),
+		},
 		adapters = {
 			require("neotest-golang")({ runner = "gotestsum" }),
 			require("neotest-python")({
 				dap = { justMyCode = false, stopOnEntry = false }, -- TODO: should this be somewhere else?
 				args = function(runner, position, strategy)
-                    print(runner)
+					print(runner)
 					if strategy == "dap" or (position and position.type ~= "dir") then
 						return { "-n", "0" }
 					end

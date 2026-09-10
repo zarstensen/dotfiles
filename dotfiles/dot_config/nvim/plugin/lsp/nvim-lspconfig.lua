@@ -71,13 +71,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, "List [O]utgoing Calls")
 
 		map("<leader>nk", function()
-			vim.lsp.buf.hover({
-				title = "Inspect",
-				title_pos = "left",
-				border = "single",
-				max_height = 25,
-				max_width = 120,
-			})
+			if require("dap").session() then
+				require("dapui").eval()
+			else
+				vim.lsp.buf.hover({
+					title = "Inspect",
+					title_pos = "left",
+					border = "single",
+					max_height = 25,
+					max_width = 120,
+				})
+			end
 		end, "Hover Symbol")
 		map("<leader>nK", function()
 			vim.lsp.buf.signature_help({

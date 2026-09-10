@@ -1,5 +1,5 @@
 {
-  "codelldb": "v1.12.2",
+  "codelldb": "v1.12.3",
   "debugpy": "1.8.21",
   "delve": "v1.27.1",
   "java-debug-adapter": "0.59.0",
