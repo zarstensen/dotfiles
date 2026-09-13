@@ -1,7 +1,8 @@
 -- update search path so it also includes the ~/.config/hypr folder
 package.path = package.path .. ";./?.lua;./?/init.lua"
 
-require("monitors")
+pcall(require, "monitors")
+pcall(require, "workspaces")
 
 require("config.plugins.hyprsplit")
 
