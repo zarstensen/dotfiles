@@ -33,7 +33,7 @@ PanelWindow {
             bottom: parent.bottom
         }
 
-        Power {
+        SessionCtl {
             Layout.fillHeight: true
         }
     }
@@ -53,6 +53,12 @@ PanelWindow {
             leftMargin: Style.nWidgetSpacing / 2
             rightMargin: Style.nWidgetSpacing / 2
         }
+
+        // Power {
+        //     Layout.fillHeight: true
+        //     leftMargin: Style.nWidgetSpacing / 2
+        //     rightMargin: Style.nWidgetSpacing / 2
+        // }
 
         Clock {
             Layout.fillHeight: true

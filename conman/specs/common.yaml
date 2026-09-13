@@ -54,6 +54,9 @@
 - texlive
 # filewatcher
 - inotify-tools
+  # performance tuning
+- tuned-ppd:
+    - services/tuned.sh: once after
 # neovim
 - neovim:
   - packages/easydotnet.sh: once after

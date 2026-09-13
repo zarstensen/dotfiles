@@ -1,4 +1,3 @@
-// TODO: tooltips + custom context menu so we can use focus grab OR another solution and pickle is just lying to me
 import Quickshell
 import Quickshell.Hyprland
 import Quickshell.Widgets
@@ -13,6 +12,7 @@ PopupWindow {
     id: trayPanel
     required property Item item
     property bool open: false
+    property int minGridSize: 2
     color: "transparent"
     visible: panel.opacity != 0
 
@@ -26,13 +26,41 @@ PopupWindow {
         margins.top: -Style.nWidgetSpacing
     }
 
+    // context menu anchor? for the context menu which appreas when we right click on tray items.
+    QsMenuAnchor {
+        id: contextMenu
+        anchor.edges: Edges.Top | Edges.Left
+        anchor.gravity: Edges.Top | Edges.Left
+
+        // open the context menu with the given menu, and place it at the given item.
+        function activate(menu: QsMenuHandle, trayItem: Item) {
+            contextMenu.menu = menu;
+            contextMenu.anchor.item = trayItem;
+            contextMenu.open();
+        }
+    }
+
+    HyprlandFocusGrab {
+        windows: [trayPanel]
+
+        // if the context menu is opened, we dont want to close the tray panel, so check this here,
+        // *and* in onCleared.
+        active: trayPanel.open && !contextMenu.visible
+
+        onCleared: {
+            if (!contextMenu.visible) {
+                trayPanel.open = false;
+            }
+        }
+    }
+
     Rectangle {
         id: panel
         radius: Style.nRadius
         color: Colors.setAlpha(Style.cBackground, 0.8)
         anchors.fill: parent
 
-        opacity: open ? 1 : 0
+        opacity: trayPanel.open ? 1 : 0
         FastNumber on opacity {}
 
         WrapperItem {
@@ -42,10 +70,18 @@ PopupWindow {
 
             Grid {
                 id: trayGrid
-                columns: Math.ceil(Math.sqrt(SystemTray.items.values.length))
+                columns: Math.ceil(Math.sqrt(trayItems.length))
+
+                property var trayItems: {
+                    const padded_items = [...SystemTray.items.values];
+                    while (padded_items.length < trayPanel.minGridSize * trayPanel.minGridSize) {
+                        padded_items.push({ icon: "" });
+                    }
+                    return padded_items;
+                }
 
                 Repeater {
-                    model: SystemTray.items
+                    model: trayGrid.trayItems
                     WrapperMouseArea {
                         id: trayArea
                         required property SystemTrayItem modelData
@@ -53,25 +89,20 @@ PopupWindow {
                         hoverEnabled: true
 
                         onClicked: mouse => {
-                            if (mouse.button == Qt.LeftButton) {
-                                modelData.activate();
+                            if (modelData?.menu && (mouse.button == Qt.LeftButton || mouse.button == Qt.RightButton)) {
+                                contextMenu.activate(modelData.menu, trayArea);
                             }
                             if (mouse.button == Qt.MiddleButton) {
-                                modelData.secondaryActivate();
-                            }
-                            if (mouse.button == Qt.RightButton) {
-                                let global_pos = trayArea.mapToItem(trayPanel.contentItem, mouse.x, mouse.y);
-                                modelData.display(trayPanel, global_pos.x, global_pos.y);
+                                modelData?.secondaryActivate();
                             }
                         }
 
                         HoverRect {
                             margin: Style.nWidgetSpacing / 3
-                            isHovered: trayArea.containsMouse
 
                             IconImage {
                                 id: trayIcon
-                                source: modelData.icon
+                                source: trayArea.modelData?.icon ?? ""
                                 asynchronous: true
                                 implicitSize: Style.fIconSm.pixelSize
                             }
