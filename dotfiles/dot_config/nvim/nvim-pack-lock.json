@@ -37,6 +37,10 @@
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
       "src": "https://github.com/akinsho/bufferline.nvim"
     },
+    "competitest.nvim": {
+      "rev": "b42c06ca308906f07912ba9aff015ac2c0831f85",
+      "src": "https://github.com/xeluxee/competitest.nvim"
+    },
     "conform.nvim": {
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -202,6 +206,10 @@
     "nvim-dap-go": {
       "rev": "b4421153ead5d726603b02743ea40cf26a51ed5f",
       "src": "https://github.com/leoluz/nvim-dap-go"
+    },
+    "nvim-dap-lldb": {
+      "rev": "4725dd751ac7403b9f8c748776f7d9555394675d",
+      "src": "https://github.com/julianolf/nvim-dap-lldb.git"
     },
     "nvim-dap-python": {
       "rev": "1808458eba2b18f178f990e01376941a42c7f93b",

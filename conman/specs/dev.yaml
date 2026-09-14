@@ -37,3 +37,6 @@
   - gotestsum
 # lua
 - luarocks
+- .virtual:
+  - vagrant
+  - virtualbox
