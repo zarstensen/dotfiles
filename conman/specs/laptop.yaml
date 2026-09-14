@@ -1,7 +1,4 @@
 - brightnessctl
-  # performance tuning
-- tuned-ppd:
-    - services/tuned.sh: once after
   # keyboard mapping
 - keyd:
     - services/keyd.sh: once after
