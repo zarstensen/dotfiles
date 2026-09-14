@@ -50,7 +50,7 @@ Singleton {
 
     property font fIcon: ({
             family: _fontFamily,
-            pixelSize: 60,
+            pixelSize: 22,
             weight: Font.Normal
         })
     property font fIconSm: ({
