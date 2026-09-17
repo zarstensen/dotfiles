@@ -29,6 +29,17 @@ require("persistent-breakpoints").setup({
 })
 
 vim.keymap.set("n", "<F5>", ":DapContinue<CR>", { desc = "Debug: Start / Continue" })
+
+vim.keymap.set("n", "<F17>", function()
+	local dap = require("dap")
+
+	if dap.session() then
+		dap.terminate()
+	else
+		dap.run_last()
+	end
+end, { desc = "Debug: Rerun / Terminate" })
+
 vim.keymap.set("n", "<F11>", ":DapStepInto<CR>", { desc = "Debug: Step Into" })
 vim.keymap.set("n", "<F10>", ":DapStepOver<CR>", { desc = "Debug: Step Over" })
 vim.keymap.set("n", "<F12>", ":DapStepOut<CR>", { desc = "Debug: Step Out" })

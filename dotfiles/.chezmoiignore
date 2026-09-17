@@ -1,3 +1,7 @@
 conman-run.sh
 setup-env.sh
 .qmlls.ini
+monitors.lua
+monitors.conf
+workspaces.lua
+workspaces.conf

@@ -361,6 +361,10 @@
       "rev": "8cac54ffe2ae38a844c3b7adc7480a8e856d1aba",
       "src": "https://github.com/dylon/vim-antlr.git"
     },
+    "vim-doge": {
+      "rev": "fea6ac4b1aaa2e10e08ecf53ad0fe809fc7d8b53",
+      "src": "https://github.com/kkoomen/vim-doge"
+    },
     "vim-easy-align": {
       "rev": "9815a55dbcd817784458df7a18acacc6f82b1241",
       "src": "https://github.com/junegunn/vim-easy-align.git"
