@@ -19,10 +19,10 @@ vim.keymap.set("n", "<S-K>", "<C-U>", { desc = "Half page up" })
 -- vim.keymap.set("i", "<C-L>", "<C-O>l", { desc = "Move right" })
 
 vim.keymap.set("n", "gw", function()
-	vim.diagnostic.jump({ count = 1, float = true })
+    vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "[G]oto Next Diagnostics" })
 vim.keymap.set("n", "gW", function()
-	vim.diagnostic.jump({ count = -1, float = true })
+    vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "[G]oto Previous Diagnostics" })
 
 vim.keymap.set("n", "<S-ø>", "AAA")
@@ -36,10 +36,10 @@ vim.keymap.set("n", "<S-ø>", "AAA")
 -- vim.keymap.set("n", "<M-h>", string.format(":vert res -%d<CR>", resize_speed))
 
 -- local resize_helper = function(win_cmd, res_cmd)
--- 	return function()
--- 		local win_nr = vim.fn.winnr(win_cmd)
--- 		vim.cmd(("%s"):format(res_cmd):format(win_nr, resize_speed))
--- 	end
+--  return function()
+--      local win_nr = vim.fn.winnr(win_cmd)
+--      vim.cmd(("%s"):format(res_cmd):format(win_nr, resize_speed))
+--  end
 -- end
 
 -- vim.keymap.set("n", "<A-S-j>", resize_helper("1h", "%dres -%d<CR>"))
@@ -48,65 +48,65 @@ vim.keymap.set("n", "<S-ø>", "AAA")
 -- vim.keymap.set("n", "<A-S-r>", resize_helper("1k", "vert %dres -%d<CR>"))
 
 vim.api.nvim_create_user_command("Settab", function(opts)
-	local ts = tonumber(opts.args) or 4
-	vim.cmd(string.format("setlocal expandtab tabstop=%d shiftwidth=%d softtabstop=%d", ts, ts, ts))
-	vim.cmd("retab")
+    local ts = tonumber(opts.args) or 4
+    vim.cmd(string.format("setlocal expandtab tabstop=%d shiftwidth=%d softtabstop=%d", ts, ts, ts))
+    vim.cmd("retab")
 end, {
-	nargs = 1,
-	complete = function()
-		return { "2", "4", "8" }
-	end,
+    nargs = 1,
+    complete = function()
+        return { "2", "4", "8" }
+    end,
 })
 
 vim.api.nvim_create_user_command("ConfigReload", function()
-	vim.cmd(":source $MYVIMRC")
+    vim.cmd(":source $MYVIMRC")
 end, {
-	nargs = 0,
+    nargs = 0,
 })
 
 vim.api.nvim_create_user_command("Dash", function()
-	Snacks.dashboard()
+    Snacks.dashboard()
 end, {
-	nargs = 0,
+    nargs = 0,
 })
 
 vim.api.nvim_create_user_command("Update", function()
-	vim.pack.update()
+    vim.pack.update()
 end, {
-	nargs = 0,
+    nargs = 0,
 })
 
 vim.api.nvim_create_user_command("Purge", function()
     local should_del_def = nil
-	for _, pack in ipairs(vim.pack.get()) do
-		if not pack.active then
-			local should_del = should_del_def
-			while should_del == nil do
-				local answer = vim.fn.input("Delete '" .. pack.spec.name .. "'? (y/n): ")
+    for _, pack in ipairs(vim.pack.get()) do
+        if not pack.active then
+            local should_del = should_del_def
+            while should_del == nil do
+                local answer = vim.fn.input("Delete '" .. pack.spec.name .. "'? (y/n): ")
 
-				if answer:lower() == "y" then
-					should_del = true
-				elseif answer:lower() == "n" then
-					should_del = false
-				end
+                if answer:lower() == "y" then
+                    should_del = true
+                elseif answer:lower() == "n" then
+                    should_del = false
+                end
 
                 if answer == "Y" or answer == "N" then
                     should_del_def = should_del
                 end
-			end
+            end
 
             if should_del then
                 print("Deleting '" .. pack.spec.name .. "'")
-			    vim.pack.del({ pack.spec.name })
+                vim.pack.del({ pack.spec.name })
             else
                 print("Skipping '" .. pack.spec.name .. "'")
             end
-		end
-	end
+        end
+    end
 end, {
-	nargs = 0,
+    nargs = 0,
 })
 
 vim.keymap.set("n", "yd", function()
-	vim.fn.setreg("+", utils.get_diag_on_line())
+    vim.fn.setreg("+", utils.get_diag_on_line())
 end, { desc = "Yank diagnostic" })

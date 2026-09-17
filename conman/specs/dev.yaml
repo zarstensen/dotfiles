@@ -17,6 +17,7 @@
   - dotnet-runtime-8.0
   - dotnet-sdk
   - aspnet-runtime
+  - aspnet-targeting-pack
 # godo
 - godot
 # python
@@ -40,3 +41,4 @@
 - .virtual:
   - vagrant
   - virtualbox
+- sqlitebrowser
