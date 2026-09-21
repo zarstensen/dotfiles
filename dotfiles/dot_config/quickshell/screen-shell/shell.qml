@@ -1,5 +1,6 @@
 //@ pragma UseQApplication
 //@ pragma Env QS_NO_RELOAD_POPUP=1
+//@ pragma IconTheme Fluent
 // qmllint disable import
 // qmllint disable unqualified
 import Quickshell

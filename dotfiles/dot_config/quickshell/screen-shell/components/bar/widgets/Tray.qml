@@ -5,6 +5,7 @@ import QtQuick
 import qs.style
 import qs.style.behaviors
 import qs.components.panels
+import qs.controls
 
 WrapperMouseArea {
     id: trayWidget
@@ -16,10 +17,7 @@ WrapperMouseArea {
     MedNumber on heightScale {}
     onHeightScaleChanged: widgetCanvas.requestPaint()
 
-    Item {
-        implicitWidth: widgetCanvas.implicitWidth
-        implicitHeight: widgetCanvas.implicitHeight
-
+    CenterItem {
         Canvas {
             id: widgetCanvas
             anchors.verticalCenter: parent.verticalCenter
@@ -53,18 +51,3 @@ WrapperMouseArea {
     }
 }
 
-// Row {
-//     spacing: Style.nWidgetSpacing
-//
-//     Repeater {
-//         model: SystemTray.items
-//
-//         IconImage {
-//             required property SystemTrayItem modelData
-//
-//             source: modelData.icon
-//             asynchronous: true
-//             implicitSize: Style.fIconSm.pixelSize
-//         }
-//     }
-// }

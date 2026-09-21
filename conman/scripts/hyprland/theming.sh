@@ -15,6 +15,13 @@ echo n | ./install.sh -a
 
 cd ..
 
+# this is used by the quickshell bar
+git clone https://github.com/vinceliuice/Fluent-icon-theme
+
+cd Fluent-icon-theme
+
+echo n | ./install.sh
+
 # set icon themes for GTK aps
 gsettings set org.gnome.desktop.interface icon-theme 'Mignon-pastel'
 

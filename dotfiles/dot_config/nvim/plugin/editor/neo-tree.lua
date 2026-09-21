@@ -33,3 +33,13 @@ require("neo-tree").setup({
 
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Open [E]xplorer" })
 vim.keymap.set("n", "<leader>ge", ":Neotree git_status toggle<CR>", { desc = "Open [G]it Status [E]xplorer" })
+
+require("lsp-file-operations").setup()
+
+vim.lsp.config.tuil.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+	capabilities = vim.tbl_deep_extend(
+		"force",
+		vim.lsp.protocol.make_client_capabilities(),
+		require("lsp-file-operations").default_capabilities()
+	),
+})

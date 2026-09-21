@@ -4,6 +4,7 @@
 // qmllint disable missing-property
 import Quickshell
 import Quickshell.Wayland
+import Quickshell.Services.UPower
 import QtQuick
 import QtQuick.Layouts
 import qs.style
@@ -54,11 +55,17 @@ PanelWindow {
             rightMargin: Style.nWidgetSpacing / 2
         }
 
-        // Power {
-        //     Layout.fillHeight: true
-        //     leftMargin: Style.nWidgetSpacing / 2
-        //     rightMargin: Style.nWidgetSpacing / 2
-        // }
+        Loader {
+            sourceComponent: Component {
+                Battery {
+                    Layout.fillHeight: true
+                    leftMargin: Style.nWidgetSpacing / 2
+                    rightMargin: Style.nWidgetSpacing / 2
+                }
+            }
+
+            active: true || UPower.onBattery
+        }
 
         Clock {
             Layout.fillHeight: true

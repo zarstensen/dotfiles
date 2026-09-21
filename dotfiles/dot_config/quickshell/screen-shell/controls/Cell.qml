@@ -6,6 +6,7 @@ import QtQuick.Controls
 import qs.style
 import qs.style.behaviors
 import qs.components.bar.controllers
+import qs.controls
 import qs.utils
 
 WrapperMouseArea {
@@ -21,13 +22,11 @@ WrapperMouseArea {
         color: cell.containsMouse ? Style.cForeground : Colors.setAlpha(Style.cForeground, 0)
         FastColor on color {}
         radius: 15
-        readonly property real hPadding: (Style.nBarHeight - Style.fIcon.pixelSize * 0.8) / 2
+        readonly property real hPadding: (Style.nWidgetSpacing) / 2
         leftMargin: hPadding
         rightMargin: hPadding
 
-        Item {
-            implicitWidth: row.implicitWidth
-            implicitHeight: row.implicitHeight
+        CenterItem {
 
             Row {
                 id: row

@@ -10,6 +10,7 @@ import QtQuick.Controls
 import qs.style
 import qs.style.behaviors
 import qs.components.bar.controllers
+import qs.controls
 
 // mouse widget, clikc to expose a date label under the time label
 
@@ -21,10 +22,7 @@ WrapperMouseArea {
     // its only the *item* which is stretched, but the column itself is kept in the center of the item.
     // we need to set the implicitWidth and Height still so the WrapperMouseArea knows what the
     // minimum width and height is for the widget
-    Item {
-        implicitWidth: clockCol.implicitWidth
-        implicitHeight: clockCol.implicitHeight
-
+    CenterItem {
         Column {
             id: clockCol
             anchors.centerIn: parent
