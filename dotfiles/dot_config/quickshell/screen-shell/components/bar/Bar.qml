@@ -64,7 +64,7 @@ PanelWindow {
                 }
             }
 
-            active: true || UPower.onBattery
+            active: UPower.onBattery
         }
 
         Clock {
