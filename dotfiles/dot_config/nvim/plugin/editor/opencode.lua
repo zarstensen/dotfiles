@@ -1,7 +1,7 @@
 vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
 
-	"https://github.com/sudo-tee/opencode.nvim",
+	{ src = "https://github.com/sudo-tee/opencode.nvim", version = "v2" },
 })
 
 require("utils.lload")("FileType", function()
@@ -19,4 +19,3 @@ require("opencode").setup({
 	keymap_prefix = "<leader>h",
 	ui = { questions = { use_vim_ui_select = true } },
 })
-

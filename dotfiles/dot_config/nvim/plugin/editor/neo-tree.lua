@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>ge", ":Neotree git_status toggle<CR>", { desc = "Op
 
 require("lsp-file-operations").setup()
 
-vim.lsp.config.tuil.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+vim.lsp.config("*", {
 	capabilities = vim.tbl_deep_extend(
 		"force",
 		vim.lsp.protocol.make_client_capabilities(),
