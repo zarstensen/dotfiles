@@ -1,0 +1,3 @@
+[submodule "dotfiles/dot_config/hypr/plugins/hyprsplit"]
+	path = dotfiles/dot_config/hypr/plugins/hyprsplit
+	url = https://github.com/shezdy/hyprsplit.git
