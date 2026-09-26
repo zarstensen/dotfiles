@@ -49,6 +49,12 @@ PanelWindow {
             rightMargin: (Style.nBarHeight - Style.fBody.pixelSize * 0.9) / 2
         }
 
+        Update {
+            Layout.fillHeight: true
+            leftMargin: Style.nWidgetSpacing / 2
+            rightMargin: Style.nWidgetSpacing / 2
+        }
+
         Tray {
             Layout.fillHeight: true
             leftMargin: Style.nWidgetSpacing / 2

@@ -29,7 +29,7 @@ WrapperMouseArea {
                 ctx.clearRect(0, 0, width, height);
 
                 ctx.strokeStyle = Style.cText;
-                ctx.lineWidth = Style.fIconSm.pixelSize * (1 / 20);
+                ctx.lineWidth = Style.fIconSm.pixelSize * (1 / 17);
 
                 ctx.lineCap = "round";
                 ctx.lineJoin = "round";
