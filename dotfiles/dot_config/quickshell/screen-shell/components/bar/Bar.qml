@@ -8,6 +8,7 @@ import Quickshell.Services.UPower
 import QtQuick
 import QtQuick.Layouts
 import qs.style
+import qs.components.bar.controllers
 import qs.utils
 import qs.components.bar.widgets
 
@@ -49,13 +50,25 @@ PanelWindow {
             rightMargin: (Style.nBarHeight - Style.fBody.pixelSize * 0.9) / 2
         }
 
-        Update {
+        Loader {
+            sourceComponent: Component {
+                Update {
+                    Layout.fillHeight: true
+                    leftMargin: Style.nWidgetSpacing / 2
+                    rightMargin: Style.nWidgetSpacing / 2
+                }
+            }
+
+            active: UpdateController.hasUpdates
+        }
+
+        Tray {
             Layout.fillHeight: true
             leftMargin: Style.nWidgetSpacing / 2
             rightMargin: Style.nWidgetSpacing / 2
         }
 
-        Tray {
+        IDK {
             Layout.fillHeight: true
             leftMargin: Style.nWidgetSpacing / 2
             rightMargin: Style.nWidgetSpacing / 2
