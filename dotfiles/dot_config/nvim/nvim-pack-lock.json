@@ -85,6 +85,10 @@
       "rev": "ce2f6a3f2460d2c73a41a5a78b1068c6beab8a65",
       "src": "https://github.com/Teatek/gdscript-extended-lsp.nvim"
     },
+    "gh.nvim": {
+      "rev": "6f367b2ab8f9d4a0a23df2b703a3f91137618387",
+      "src": "https://github.com/ldelossa/gh.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "070a5d7b985546cc57e1fc61e5bc507fecac6045",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -104,6 +108,10 @@
     "lazydev.nvim": {
       "rev": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d",
       "src": "https://github.com/folke/lazydev.nvim"
+    },
+    "litee.nvim": {
+      "rev": "4efaf373322d9e71eaff31164abb393417cc6f6a",
+      "src": "https://github.com/ldelossa/litee.nvim"
     },
     "live-command.nvim": {
       "rev": "fc8c36d7e5b96945fbc52af7029facc317a47377",

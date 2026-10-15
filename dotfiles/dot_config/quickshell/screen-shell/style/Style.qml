@@ -13,7 +13,7 @@ Singleton {
     property color cBackground: Nord.snowStorm2
     property color cBackgroundMuted: Nord.snowStorm1
 
-    property color cForeground: Nord.polarNight1
+    property color cForeground: Nord.polarNight3
 
     property color cText: Nord.polarNight2
     property color cTextMuted: Nord.polarNight3

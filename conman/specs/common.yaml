@@ -23,6 +23,7 @@
 - git:
   # setup git credential manager so we can login via website
   - common/git-creds.sh: once after
+  - github-cli
 - openssh
 - stow
 - wl-clipboard
