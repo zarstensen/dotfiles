@@ -68,12 +68,6 @@ PanelWindow {
             rightMargin: Style.nWidgetSpacing / 2
         }
 
-        IDK {
-            Layout.fillHeight: true
-            leftMargin: Style.nWidgetSpacing / 2
-            rightMargin: Style.nWidgetSpacing / 2
-        }
-
         Loader {
             sourceComponent: Component {
                 Battery {
@@ -83,7 +77,7 @@ PanelWindow {
                 }
             }
 
-            active: UPower.onBattery
+            active: UPower.displayDevice && UPower.displayDevice.isLaptopBattery
         }
 
         Clock {

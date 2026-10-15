@@ -19,6 +19,8 @@ done
 
 slurp_region="$(hyprctl clients -j | jq -r '.[] | "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"' | slurp -b 0B0F1877 -c cdd6f4)"
 
+sleep 0.2
+
 # check if slurp was cancelled
 if [[ "$?" != 0 ]]; then 
     cleanup

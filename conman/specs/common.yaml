@@ -72,3 +72,6 @@
   - qt6-declarative
   - qt6-languageserver
   - qt6-translations
+- bluez:
+  - bluez-utils
+  - blueman

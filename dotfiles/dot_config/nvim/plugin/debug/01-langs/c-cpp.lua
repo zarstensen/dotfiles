@@ -58,3 +58,4 @@ for _, config in ipairs(configs) do
 end
 
 dap.configurations.cpp = all_configs
+dap.configurations.c = all_configs

@@ -11,6 +11,7 @@
 - .c++:
   - cmake
   - meson
+  - riscv64-linux-gnu-gcc
 # dotnet
 - .dotnet:
   - dotnet-runtime
@@ -18,7 +19,7 @@
   - dotnet-sdk
   - aspnet-runtime
   - aspnet-targeting-pack
-# godo
+# godot
 - godot
 # python
 - python:
