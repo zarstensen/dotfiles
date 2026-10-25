@@ -43,7 +43,7 @@ end, { desc = "Debug: Rerun / Terminate" })
 vim.keymap.set("n", "<F11>", ":DapStepInto<CR>", { desc = "Debug: Step Into" })
 vim.keymap.set("n", "<F10>", ":DapStepOver<CR>", { desc = "Debug: Step Over" })
 vim.keymap.set("n", "<F12>", ":DapStepOut<CR>", { desc = "Debug: Step Out" })
-vim.keymap.set("n", "<F7>", ":DapViewToggle<CR>", { desc = "Debug: Toggle Last Session Result" })
+-- vim.keymap.set("n", "<F7>", ":DapViewToggle<CR>", { desc = "Debug: Toggle Last Session Result" })
 
 -- breakpoint maps
 vim.keymap.set("n", "<leader>b", ":PBToggleBreakpoint<CR>", { desc = "Debug: Toggle [B]reakpoint" })

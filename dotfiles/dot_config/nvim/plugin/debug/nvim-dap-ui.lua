@@ -24,4 +24,6 @@ require("utils.lload")("WinEnter", function()
 	dap.listeners.before.event_exited.dapui_config = function()
 		dapui.close()
 	end
+
+	vim.keymap.set("n", "<F7>", dapui.toggle, { desc = "Debug: Toggle Last Session Result" })
 end)
