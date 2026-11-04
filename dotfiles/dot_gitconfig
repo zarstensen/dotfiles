@@ -5,7 +5,7 @@
 	helper = libsecret
 	helper = 
 	helper = /home/zarsten/.dotnet/tools/git-credential-manager
-	credentialStore = secretservice
+	credentialStore = cache
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [core]
