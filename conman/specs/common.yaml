@@ -20,6 +20,8 @@
   - openbsd-netcat
   # tui file explorer
   - yazi
+  # hex dumper with colours
+  - xxd
 - git:
   # setup git credential manager so we can login via website
   - common/git-creds.sh: once after
