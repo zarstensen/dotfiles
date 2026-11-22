@@ -1,7 +1,6 @@
 vim.pack.add({
 	"https://github.com/nvim-lua/plenary.nvim",
-
-	{ src = "https://github.com/sudo-tee/opencode.nvim", version = "v2" },
+	"https://github.com/sudo-tee/opencode.nvim",
 })
 
 require("utils.lload")("FileType", function()
@@ -17,5 +16,6 @@ end, { "markdown", "Avante", "copilot-chat", "opencode_output" })
 
 require("opencode").setup({
 	keymap_prefix = "<leader>h",
+	server = { timeout = 60 },
 	ui = { questions = { use_vim_ui_select = true } },
 })

@@ -53,6 +53,10 @@
       "rev": "19136a0ae59d7dfa265dc0f5ec2663cb2d2abad8",
       "src": "https://github.com/dtrh95/csharp-explorer.nvim"
     },
+    "cutlass.nvim": {
+      "rev": "d01b5c1943050fcda8edf5c89d4419c41a65890e",
+      "src": "https://github.com/gbprod/cutlass.nvim"
+    },
     "debugmaster.nvim": {
       "rev": "505d9a269d657ce8e0fa5601e0530f0d8798038c",
       "src": "https://github.com/MironPascalCaseFan/debugmaster.nvim"
@@ -264,7 +268,7 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-scrollbar": {
-      "rev": "bbee38d037df1251ffa94d20f5255368f6c6ae1f",
+      "rev": "3674de0ce9d6e280d2506e991e803c35da2a1481",
       "src": "https://github.com/petertriho/nvim-scrollbar"
     },
     "nvim-spider": {
@@ -280,7 +284,7 @@
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
-      "rev": "37e52c733ada9d8d544d53a763140ef1ba404353",
+      "rev": "52773f0d13a0c11d0c3ef33c14ab6ecc1c17148b",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
@@ -296,9 +300,8 @@
       "src": "https://github.com/jbyuki/one-small-step-for-vimkind"
     },
     "opencode.nvim": {
-      "rev": "f3c14b66bf1e9019cbde218d1c857f84f9b3073c",
-      "src": "https://github.com/sudo-tee/opencode.nvim",
-      "version": "'v2'"
+      "rev": "636ac6214dcb6770f6966c8132d73e6abaf7595c",
+      "src": "https://github.com/sudo-tee/opencode.nvim"
     },
     "overseer.nvim": {
       "rev": "a93d9f6d6defdac4bcd6d2c8ba988650e42e0a0e",
