@@ -1,6 +1,6 @@
-if vim.fn.has("win32") then
-	return
-end
+-- if vim.fn.has("win32") then
+-- 	return
+-- end
 
 vim.pack.add({
 	"https://github.com/pocco81/auto-save.nvim",
@@ -10,10 +10,6 @@ local exclude_ft = {
 	-- godot
 	"gdscript",
 	"gdshader",
-}
-
-local exclude_fn = {
-	".nvim.lua",
 }
 
 require("auto-save").setup({
@@ -33,4 +29,6 @@ require("auto-save").setup({
 	end,
 	-- increased interval of no-op before an autosave is performed
 	debounce_delay = 1000,
+	write_all_buffers = true,
 })
+
